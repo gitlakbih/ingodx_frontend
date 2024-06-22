@@ -1,0 +1,95 @@
+.advantages {
+    text-align: center;
+    padding: 150px 20px;
+    background-color: #fff;
+}
+
+.advantages h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.advantages h2 span {
+    color: var(--blu);
+}
+
+.advantage-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #fff;
+    text-align: left;
+    border: 2px solid var(--yel);
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(50% - 20px);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.left-side {
+    width: 65px;
+    height: 65px;
+    background-color: #fff3d1;
+    padding: 12px;
+    margin-right: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+
+
+.icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.icon{
+    width: 40px;
+    height: 40px;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+}
+
+.cta-button {
+    margin-top: 30px;
+}
+
+.cta-button button {
+    background-color: var(--blu);
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color ease 0.5s;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}
