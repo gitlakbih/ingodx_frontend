@@ -47,8 +47,8 @@ main {
     background-color: var(--blu);
     border: none;
     outline: none;
-    height: 49px;
-    border-radius: 10px;
+    height: 40px;
+    border-radius: 50px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;

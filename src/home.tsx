@@ -4,19 +4,35 @@ import './vedio.css'
 import './offers.css'
 import './advantages.css'
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
+import { Link } from 'react-router-dom';
+import checkLogin from './CheckLogin'
 
-
+import { useEffect, useState } from 'react'
 
 function Home() {
-    const [text ] = useTypewriter({
-        words: ['Community', 'Deliveries', 'Way'],
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const [text] = useTypewriter({
+        words: ['Community', 'Deliveries', 'Way',],
         loop: true,  // Change empty object to true to enable looping
+
     });
+
+    useEffect(() => {
+        async function fetchData() {
+            const loggedIn = await checkLogin();
+            setIsLoggedIn(loggedIn);
+        }
+        fetchData();
+    }, []);
+
+
 
     return (
         <main>
             <section className="introduction">
-                <h1>
+                <h1 >
                     <span className="godx">In</span>
                     <span className="in">Go</span>
                     <span className="godx">dx</span>
@@ -24,22 +40,29 @@ function Home() {
                     <span className='text-purple-600'>
                         {text}
                     </span>
-                    <Cursor/>
+                    <Cursor />
                 </h1>
                 <p>
-                    welcome to <span className="in">in</span>
+                    With <span className="in">in</span>
                     <span className="godx">Godx</span>
                 </p>
                 <p>
-                    whit <span className="in">in</span>
-                    <span className="godx">Godx</span> you can git what ever you want from
-                    anywhere you need{' '}
+                    Get Whatever You Need, Whenever You Like, From Wherever You Want
                 </p>
                 <div>
                     <a href="/USER%20V-0.0.0/IDE.HTML">
-                        <button type="button" className="btn">Get Started</button>
+                        <Link to='/Login'><button type="button" className="btn">Get Started</button></Link>
+                        
                     </a>
                 </div>
+
+
+                {isLoggedIn ? (
+                    <div className="logged-in-message">
+                        <h2>Welcome back! You are logged in.</h2>
+                        {/* You can add any additional UI or logic for logged in users here */}
+                    </div>
+                ) : null}
             </section>
 
             <section className="video-container">
@@ -73,14 +96,12 @@ function Home() {
                 <article className="cardContainer">
                     <div className="cards">
                         <div className="text">
-                            <h2 className="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h2>
+                            <h2 className="title">Efficient Home Delivery Services: Revolutionizing Convenience and Comfort.</h2>
                             <p className="paragraph">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque doloribus incidunt consequatur
-                                fugiat maxime vitae magnam, ex, esse ipsum corporis recusandae cumque laborum ipsam a excepturi ea
-                                quibusdam quasi inventore! Repellendus error provident sapiente voluptatibus inventore, minus
-                                expedita necessitatibus, odit, pariatur magni sequi rerum libero quaerat.
+                                Home delivery services have revolutionized shopping, offering unmatched convenience. With a few clicks, customers can receive groceries, meals, and more at their doorstep quickly and reliably. Advanced logistics and real-time tracking ensure flexible and efficient delivery, fitting seamlessly into busy lives. This integration boosts consumer satisfaction and helps businesses expand their reach.
                             </p>
-                            <button type="button" className="btn">Sign UP</button>
+                            <Link to='/TsakherLiya'><button type="button" className="btn">Sign UP</button></Link>
+                            
                         </div>
                         <div className="picture">
                             <img src="/src/assets/intill-home.jpg" width="100%" alt="bisicle" />
@@ -94,14 +115,12 @@ function Home() {
                             <img src="/src/assets/bisicle.jpg" width="100%" alt="bisicle" />
                         </div>
                         <div className="text">
-                            <h2 className="title">Lorem ipsum dolor sit amet consectetur,<br /> adipisicing elit.</h2>
+                            <h2 className="title">Delivering Excellence: Working with Ingodx Company.</h2>
                             <p className="paragraph">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque doloribus incidunt consequatur
-                                fugiat maxime vitae magnam, ex, esse ipsum corporis recusandae cumque laborum ipsam a excepturi ea
-                                quibusdam quasi inventore! Repellendus error provident sapiente voluptatibus inventore, minus
-                                expedita necessitatibus, odit, pariatur magni sequi rerum libero quaerat.
+                                Working with Ingodx Company offers a dynamic and rewarding experience for delivery professionals. Ingodx is a leader in efficiency and customer satisfaction, providing competitive pay, flexible schedules, and a supportive work environment. Advanced technology and logistics ensure smooth operations, allowing drivers to excel in their roles. Joining Ingodx means being part of a team dedicated to delivering excellence.
                             </p>
-                            <button type="button" className="btn">Sign UP</button>
+                            <Link to='/Delivery'><button type="button" className="btn">Sign UP</button></Link>
+
                         </div>
                     </div>
                 </article>
@@ -109,14 +128,12 @@ function Home() {
                 <article className="cardContainer">
                     <div className="therd cards">
                         <div className="text">
-                            <h2 className="title">Lorem ipsum dolor sit amet consectetur,<br /> adipisicing elit.</h2>
+                            <h2 className="title">Ingodx: Your Reliable Business Delivery Partner</h2>
                             <p className="paragraph">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque doloribus incidunt consequatur
-                                fugiat maxime vitae magnam, ex, esse ipsum corporis recusandae cumque laborum ipsam a excepturi ea
-                                quibusdam quasi inventore! Repellendus error provident sapiente voluptatibus inventore, minus
-                                expedita necessitatibus, odit, pariatur magni sequi rerum libero quaerat.
+                                Ingodx provides businesses with reliable, efficient delivery services. Focused on punctuality and precision, Ingodx ensures timely and secure package arrivals. Advanced logistics and real-time tracking offer transparency and peace of mind. Partnering with Ingodx boosts customer satisfaction and supports business growth.
                             </p>
-                            <button type="button" className="btn">Sign UP</button>
+                            <Link to='/Market'> <button type="button" className="btn">Sign UP</button></Link>
+                            
                         </div>
                         <div className="picture">
                             <img src="/src/assets/truck.jpg" width="100%" alt="bisicle" />
@@ -124,7 +141,6 @@ function Home() {
                     </div>
                 </article>
             </section>
-
             <section className="advantages">
                 <h2>
                     Experience <span>The inGodx Advantage</span>
@@ -141,7 +157,7 @@ function Home() {
                         </div>
                         <div className="right-side">
                             <h3>Quick & Easy to Use</h3>
-                            <p>Donors initiate these gifts in minutes online instead of taking weeks offline.</p>
+                            <p>Customers can schedule deliveries quickly online, avoiding traditional delays and ensuring a smooth experience.</p>
                         </div>
                     </div>
                     <div className="card">
@@ -155,7 +171,7 @@ function Home() {
                         </div>
                         <div className="right-side">
                             <h3>Secure Platform</h3>
-                            <p>SOC-2 Type 2 with ongoing penetration testing to keep donors and nonprofits safe.</p>
+                            <p>Our SOC-2 Type 2 certified platform, with ongoing penetration testing, ensures your deliveries and information remain secure.</p>
                         </div>
                     </div>
                     <div className="card">
@@ -169,7 +185,7 @@ function Home() {
                         </div>
                         <div className="right-side">
                             <h3>Expert Support</h3>
-                            <p>Real people dedicated to supporting nonprofits and donors to facilitate non-cash giving.</p>
+                            <p>A dedicated support team is available to assist with all delivery needs, providing seamless service and customer satisfaction.</p>
                         </div>
                     </div>
                     <div className="card">
@@ -184,14 +200,13 @@ function Home() {
                         <div className="right-side">
                             <h3>Transparency at Every Step</h3>
                             <p>
-                                Ability to track donor details, gift status, and compliance in order to steward and cultivate your
-                                supporters.
+                                Enjoy real-time tracking of deliveries, with complete visibility into package status, ensuring reliability and peace of mind.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div className="cta-button">
-                    <button>Book a Demo</button>
+                    {/* <button>Book a Demo</button> */}
                 </div>
             </section>
         </main>
