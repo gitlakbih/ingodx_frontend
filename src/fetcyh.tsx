@@ -8,8 +8,8 @@ function FetchData() {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then(data => setRecords(data))
-      .catch(error => console.error('Error fetching data:', error))
-  }, [])
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
 
   return (
     <div>
@@ -19,7 +19,7 @@ function FetchData() {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default FetchData
+export default FetchData;

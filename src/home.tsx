@@ -6,18 +6,21 @@ import './advantages.css'
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { Link } from 'react-router-dom';
 import checkLogin from './CheckLogin'
-
 import { useEffect, useState } from 'react'
+
+
+
 
 function Home() {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-
     const [text] = useTypewriter({
         words: ['Community', 'Deliveries', 'Way',],
         loop: true,  // Change empty object to true to enable looping
 
     });
+
+
 
     useEffect(() => {
         async function fetchData() {
@@ -31,6 +34,7 @@ function Home() {
 
     return (
         <main>
+
             <section className="introduction">
                 <h1 >
                     <span className="godx">In</span>
@@ -51,7 +55,7 @@ function Home() {
                 </p>
                 <div>
                     <a href="/USER%20V-0.0.0/IDE.HTML">
-                        <Link to='/Login'><button type="button" className="btn">Get Started</button></Link>
+                        <Link to='/Login?mode=signup'><button id='#get' type="button" className="btn">Get Started</button></Link>
                         
                     </a>
                 </div>
@@ -65,6 +69,7 @@ function Home() {
                 ) : null}
             </section>
 
+
             <section className="video-container">
                 <div>
                     <link
@@ -74,7 +79,7 @@ function Home() {
                     <div className="video">
                         <video id="player" playsInline autoPlay controls>
                             <source
-                                src="/src/assets/Crypto Donations.mp4"
+                                src="/src/assets/WhatsAppb.mp4"
                                 type="video/mp4"
                             />
                         </video>
@@ -87,6 +92,7 @@ function Home() {
               </script> */}
                 </div>
             </section>
+
 
             <section className="offers">
                 <div className="sec-title">
@@ -141,6 +147,8 @@ function Home() {
                     </div>
                 </article>
             </section>
+
+
             <section className="advantages">
                 <h2>
                     Experience <span>The inGodx Advantage</span>
@@ -209,6 +217,7 @@ function Home() {
                     {/* <button>Book a Demo</button> */}
                 </div>
             </section>
+            
         </main>
     )
 }

@@ -57,9 +57,7 @@ function Navbar() {
                 <li><Link to='/About' >About</Link></li>
                 <Link to='/Login'><button type="button" className="btn">Sign In</button></Link>
             </ul>
-                      {/* <a  className="icon" onclick="myFunction()">
-              <i className="fa fa-bars"></i>
-            </a> */}
+    
                     </div>
         </nav>
 
