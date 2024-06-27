@@ -53,7 +53,7 @@ function Navbar() {
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to="/Market">Market</Link></li>
                 <li><Link to="/Delivery">Delivery</Link></li>
-                <li><Link to = '/TsakherLiya'>Tsakher Liya</Link></li>
+                {/* <li><Link to = '/TsakherLiya'>Tsakher Liya</Link></li> */}
                 <li><Link to='/About' >About</Link></li>
                 <Link to='/Login'><button type="button" className="btn">Sign In</button></Link>
             </ul>
