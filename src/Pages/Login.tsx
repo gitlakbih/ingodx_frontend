@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '../Navbar';
 import Cookies from 'js-cookie';
 import '../login.css';
@@ -10,6 +10,7 @@ const Login_Signup = () => {
     username: '',
     email: '',
     password: '',
+    isPassword: '',
     user_type: '',
     full_name: ''
   });
@@ -89,7 +90,7 @@ const Login_Signup = () => {
   useEffect(() => {
     const sign_in_btn = document.querySelector("#sign-in-btn");
     const sign_up_btn = document.querySelector("#sign-up-btn");
-    const container = document.querySelector(".container");
+    const container = document.querySelector(".containerl");
 
     const handleSignUpClick = () => {
       if (container) container.classList.add("sign-up-mode");
@@ -129,7 +130,7 @@ const Login_Signup = () => {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <div className="containerl">
         {/* <div>{getQueryParams()}</div> */}
         
         <div className="forms-container">
@@ -209,7 +210,20 @@ const Login_Signup = () => {
                 />
               </div>
               <div className="input-field">
+                <i className="fas fa-lock"></i>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Confirm Password"
+                  value={formData.isPassword}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="input-field">
+              <i className=" fas fa-solid fa-check"></i>
                 <select name="type" id="type" onChange={handleChange}>
+                  <option value="">Select an Obtion</option>
                   <option value="customer">Customer</option>
                   <option value="deliver">Deliver</option>
                   <option value="establishment">Establishment</option>
