@@ -1,19 +1,20 @@
-import './main.css'
-import './introduction.css'
-import './vedio.css'
-import './offers.css'
-import './advantages.css'
+import '../styles/main.css'
+import '../styles/introduction.css'
+import '../styles/vedio.css'
+import '../styles/offers.css'
+import '../styles/advantages.css'
+import { BackgroundGradientAnimation } from './ui/background-gradient-animation'
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { Link } from 'react-router-dom';
-import checkLogin from './CheckLogin'
-import { useEffect, useState } from 'react'
+// import checkLogin from './CheckLogin'
+// import { useEffect, useState } from 'react'
 
 
 
 
 function Home() {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [text] = useTypewriter({
         words: ['Community', 'Deliveries', 'Way',],
         loop: true,  // Change empty object to true to enable looping
@@ -22,76 +23,75 @@ function Home() {
 
 
 
-    useEffect(() => {
-        async function fetchData() {
-            const loggedIn = await checkLogin();
-            setIsLoggedIn(loggedIn);
-        }
-        fetchData();
-    }, []);
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         const loggedIn = await checkLogin();
+    //         setIsLoggedIn(loggedIn);
+    //     }
+    //     fetchData();
+    // }, []);
 
 
 
     return (
         <main>
+            <BackgroundGradientAnimation>
+                <div
+                // className="absolute z-50 inset-0 flex items-center justify-center pointer-events-none "
+                className="absolute z-50 inset-0 pointer-events-none "
+                >
+                    <section className="introduction">
 
-            <section className="introduction">
-                <h1 >
-                    <span className="godx">In</span>
-                    <span className="in">Go</span>
-                    <span className="godx">dx</span>
-                    <span> Your  </span>
-                    <span className='text-purple-600'>
-                        {text}
-                    </span>
-                    <Cursor />
-                </h1>
-                <p>
-                    With <span className="in">in</span>
-                    <span className="godx">Godx</span>
-                </p>
-                <p>
-                    Get Whatever You Need, Whenever You Like, From Wherever You Want
-                </p>
-                <div>
-                    <a href="/USER%20V-0.0.0/IDE.HTML">
-                        <Link to='/Login?mode=signup'><button id='#get' type="button" className="btn">Get Started</button></Link>
-                        
-                    </a>
+                        <h1 >
+                            <span className="bold-8 godx">In</span>
+                            <span className="bold-8 in">Go</span>
+                            <span className="bold-8 godx">dx</span>
+                            <span> Your  </span> 
+                            {/* <br /> */}
+                            <span className='text-purple-500'>{text}</span>
+                            <Cursor />
+                        </h1>
+                        <p>
+                            With  <span className="godx">in</span><span className="in">Go</span><span className="godx">dx</span>
+                        </p>
+                        <p>
+                            Get Whatever You Need, Whenever You Like, From Wherever You Want
+                        </p>
+                        <div>
+                            <a href="/USER%20V-0.0.0/IDE.HTML">
+                                <Link to='/Login?mode=signup'><button id='#get' type="button" className="btn">Get Started</button></Link>
+
+                            </a>
+                        </div>
+                    </section>
                 </div>
+            </BackgroundGradientAnimation>
 
-
-                {isLoggedIn ? (
-                    <div className="logged-in-message">
-                        <h2>Welcome back! You are logged in.</h2>
-                        {/* You can add any additional UI or logic for logged in users here */}
-                    </div>
-                ) : null}
-            </section>
-
-
-            <section className="video-container">
-                <div>
-                    <link
-                        rel="stylesheet"
-                        href="https://cdn.plyr.io/3.6.8/plyr.css"
-                    />
-                    <div className="video">
-                        <video id="player" playsInline autoPlay controls>
-                            <source
-                                src="/src/assets/WhatsAppb.mp4"
-                                type="video/mp4"
+                    <section className="video-container">
+                        <div>
+                            <link
+                                rel="stylesheet"
+                                href="https://cdn.plyr.io/3.6.8/plyr.css"
                             />
-                        </video>
-                    </div>
+                            <div className="video">
+                                <video id="player" playsInline autoPlay controls>
+                                    <source
+                                        src="/src/assets/WhatsAppb.mp4"
+                                        type="video/mp4"
+                                    />
+                                </video>
+                            </div>
 
-                    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
-                    <script src="plyr.js"></script>
-                    {/* <script>
+                            <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+                            <script src="plyr.js"></script>
+                            {/* <script>
                 const player = new Plyr('video', { captions: { active: true } });
               </script> */}
-                </div>
-            </section>
+                        </div>
+                    </section>
+
+
+
 
 
             <section className="offers">
@@ -107,7 +107,7 @@ function Home() {
                                 Home delivery services have revolutionized shopping, offering unmatched convenience. With a few clicks, customers can receive groceries, meals, and more at their doorstep quickly and reliably. Advanced logistics and real-time tracking ensure flexible and efficient delivery, fitting seamlessly into busy lives. This integration boosts consumer satisfaction and helps businesses expand their reach.
                             </p>
                             <Link to='/TsakherLiya'><button type="button" className="btn">Sign UP</button></Link>
-                            
+
                         </div>
                         <div className="picture">
                             <img src="/src/assets/intill-home.jpg" width="100%" alt="bisicle" />
@@ -139,7 +139,7 @@ function Home() {
                                 Ingodx provides businesses with reliable, efficient delivery services. Focused on punctuality and precision, Ingodx ensures timely and secure package arrivals. Advanced logistics and real-time tracking offer transparency and peace of mind. Partnering with Ingodx boosts customer satisfaction and supports business growth.
                             </p>
                             <Link to='/Market'> <button type="button" className="btn">Sign UP</button></Link>
-                            
+
                         </div>
                         <div className="picture">
                             <img src="/src/assets/truck.jpg" width="100%" alt="bisicle" />
@@ -213,11 +213,8 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="cta-button">
-                    {/* <button>Book a Demo</button> */}
-                </div>
             </section>
-            
+
         </main>
     )
 }

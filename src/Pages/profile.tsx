@@ -1,4 +1,4 @@
-import './profile.css'
+import '../styles/profile.css'
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';

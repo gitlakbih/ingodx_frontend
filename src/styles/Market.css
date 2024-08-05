@@ -1,0 +1,90 @@
+.stepsRange{
+    height: 5px;
+    width: 605px;
+    margin: 0 auto 1rem;
+    background-color: rgb(232, 232, 232);
+    border-radius: 50px;
+    z-index: 3;
+}
+
+.range{
+    width: 0%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: #f8c01e;
+}
+
+.step-one{
+    width: 33.3%;
+}
+
+.step-two{
+    width: 66.6%;
+}
+
+.step-tree{
+    width: 100%;
+}
+
+.step-one , .step-two , .step-tree{
+    transition: width 0.5s;
+}
+
+.customerGroup , .productGroup{
+    position: absolute;
+    top: 0px;
+    background-color: white;
+    width: 100%;
+    left: -800px;
+    overflow: hidden;
+}
+
+.productGroup{
+    top: -6px;
+}
+
+.placement{
+    left: 0px;
+}
+
+.all .overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.473);
+    z-index: 7;
+    /* display: none; */
+}
+
+.no-display{
+    display: none;
+}
+
+.accepte-btn{
+    background-color: #f8c01e;
+    color: #fff;
+    cursor: pointer;
+    height: 30px;
+    width: 70%;
+    margin: 10px auto;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: medium;
+}
+
+.bg-red{
+    background-color: red;
+}
+
+form{
+    position: relative;
+}
+@media (max-width:700px) {
+    .stepsRange{
+        width: 100%;
+        margin-right: 20px;
+    }
+}

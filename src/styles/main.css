@@ -7,9 +7,6 @@
     /* fonts */
     --Roboto: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    /* sizes of divs*/
-
-    /* size of fonts  */
 
 }
 
@@ -23,24 +20,8 @@
 }
 
 main {
-    margin-top: 80px;
+    margin-top: 50px;
 }
-
-/* .btn {
-    font-size: 20px;
-    padding: 2px 40px 5px 40px;
-    border-radius: 5px;
-    border: none;
-    background-color:var(--yel);
-    color: #fff;
-    font-weight: 500;
-    transition: all 0.2s;
-}
-.btn:hover{
-    background-color: #219aaf;
-    transition: all 0.2s;
-} */
-
 
 .btn {
     width: 150px;
@@ -61,8 +42,6 @@ main {
     background-color: #066c7e;
   }
 
-
-
 .in {
     color:var(--yel);
     font-weight: 700;
@@ -70,6 +49,7 @@ main {
 
 .godx {
     color:var(--blu);
+    font-weight: 700;
 }
 
 .sec-title{
@@ -84,13 +64,11 @@ main {
     font-weight: 600;
 }
 
-
 footer{
-    background-color: #061632;
+    /* background-color: #061632; */
+    background-color: #075563;
     height: auto;
 }
-
-
 
 
 .input-field i {

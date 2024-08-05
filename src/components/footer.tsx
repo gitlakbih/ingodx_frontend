@@ -1,35 +1,26 @@
-import './footer.css'
-import './main.css'
-import './follow.css'
+import '../styles/footer.css'
+import '../styles/main.css'
+import '../styles/follow.css'
 import { Link } from 'react-router-dom'
 
 function Footer() {
-    return (
+
+    return (<>
+        {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#219aaf" fill-opacity="1" d="M0,128L80,128C160,128,320,128,480,154.7C640,181,800,235,960,245.3C1120,256,1280,224,1360,208L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg> */}
         <footer>
             <section>
-                <article className='left-div'>
-                    <div className="logoo">
-                        <img src="\src\assets\logo.jpg" alt="inGodx logo" />
-                        <h3>in<span className="in">Go</span><span className="godx">dx</span></h3>
-                    </div>
-                    <div className='email  h-auto w-a '>
-                        <h3 className='text-white p-2 text-b text-xl '>Stay updated on News :</h3>
-                        <div className='rounded-full form-div bg-white '>
-                            <input className='outline
-                        p-3 border-none rounded-full '
-                                type="email" placeholder='Email' id='email' />
-                            <input className='btn rounded-full' type="submit" value="Submit" />
-                        </div>
-                    </div>
-                </article>
-                <article className='right-div'>
+                <div className="logoo">
+                    <img src="\src\assets\logo.jpg" alt="inGodx logo" />
+                    <h3><span className="godx"></span>in<span className="in">Go</span><span className="godx"></span>dx</h3>
+                </div>
+                <article className='footer-links'>
                     <div className="main-card">
                         <h1>Links</h1>
                         <ul>
                             <li><Link to='/'>Home</Link></li>
-                            <li><Link  to='/Delivery'>Delevry</Link></li>
+                            <li><Link to='/Delivery'>Delevry</Link></li>
                             <li><a href="">Market</a></li>
-                            <li><a href="">Bring Me</a></li>
+                            <li><a href="">Tsakher liya</a></li>
                             <li><Link to='About' >About</Link></li>
                         </ul>
                     </div>
@@ -47,6 +38,8 @@ function Footer() {
                             <li><a href="">Email profitional</a></li>
                         </ul>
                     </div>
+
+                    {/* sociale media links */}
                     <div className="main-card">
                         <h1 className='follow-margin'>Follow Us</h1>
 
@@ -89,6 +82,7 @@ function Footer() {
                                 </a>
                                 <div className="tooltip">WhatsApp</div>
                             </li>
+
                             <li className="icon-content">
                                 <a href="https://github.com/gitlakbih/ingodx_frontend" aria-label="GitHub" data-social="github">
                                     <div className="filled"></div>
@@ -138,15 +132,29 @@ function Footer() {
                         </ul>
                     </div>
                 </article>
+                {/* this comment below is a input for email update messages/ it not ready yet for there role */}
+
+                {/* <article className='left-div'>
+                    <div className='email  h-auto w-a '>
+                        <h3 className='text-white p-2 text-b text-xl '>Stay updated on News :</h3>
+                        <div className='rounded-full form-div bg-white '>
+                            <input className='outline
+                                                    p-3 border-none rounded-full '
+                                type="email" placeholder='Email' id='email' />
+                            <input className='btn rounded-full' type="submit" value="Submit" />
+                        </div>
+                    </div>
+                </article> */}
             </section>
 
-            <hr />
+            <hr className="footer-hr" />
             <div className='rights'>
                 <h3>© inGodx 2024. All rights reserved</h3>
                 <h3><a href="#"><u>our team</u></a></h3>
             </div>
 
         </footer>
+    </>
     )
 }
 

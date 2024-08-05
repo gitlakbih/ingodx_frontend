@@ -1,0 +1,49 @@
+.introduction {
+    display: flex ;
+    flex-direction: column ;
+    align-items: center ;
+    justify-content: center ;
+    height:400px;
+    padding:0px ;
+    
+
+}
+
+.introduction h1 {
+    font-size: 80px ;
+    text-align: center ;
+    font-weight: 800;
+    color:white;
+}
+.bold-8{
+    font-weight: 800 !important; 
+}
+
+.introduction p {
+    text-transform: capitalize;
+    color: #dfdfdf;
+    font-weight: 400;
+    word-spacing: 2px;
+    text-align: center;
+}
+
+.introduction .btn {
+    margin-top: 20px;
+    width: 400px;
+}
+
+@media (max-width:430px) {
+    .introduction h1{
+        font-size: 50px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .introduction .btn {
+        width: 320px;
+    }
+}
+
+.bgg-class{
+    height:400px;
+}

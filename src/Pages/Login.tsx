@@ -1,11 +1,14 @@
+import '../styles/login.css';
+import Navbar from '../components/Navbar';
 import { useEffect, useState } from 'react';
-import Navbar from '../Navbar';
-import Cookies from 'js-cookie';
-import '../login.css';
-import { useAuth } from '../contexts/AuthContext';
+// import Cookies from 'js-cookie';
+// import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
+// the component function of login page
 const Login_Signup = () => {
+
+  // the user registory informations are updated here
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -14,7 +17,10 @@ const Login_Signup = () => {
     user_type: '',
     full_name: ''
   });
-
+  
+  
+  // the functions for the sign up 
+  // handleChange of the inputs to get data 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -22,7 +28,10 @@ const Login_Signup = () => {
       [name]: value
     }));
   };
-
+  
+  // handleSubmit of the Form to submit and send data to dataBase
+  // Notice -- should change fetch to axios
+  // --> axios much better ans easy to use
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -44,11 +53,21 @@ const Login_Signup = () => {
     }
   };
 
-  const { login } = useAuth();
-  const navigate = useNavigate();
-  const [formDataLogin, setFormDataLogin] = useState({ username: '', password: '' });
-  const [error, setError] = useState('');
 
+  // the functions for the sign up 
+
+  // important variables
+
+  // const { login } = useAuth();
+  const navigate = useNavigate();
+  const [error, setError] = useState('');
+  // user Login stored here
+  const [formDataLogin, setFormDataLogin] = useState({
+    username: '', 
+    password: '' 
+  });
+
+  // handleChange of the login inputs to get data 
   const handleChangeLogin = (e) => {
     const { name, value } = e.target;
     setFormDataLogin((prevState) => ({
@@ -56,10 +75,12 @@ const Login_Signup = () => {
       [name]: value,
     }));
   };
-
+  
+  // handleSubmit of the login inputs to send data to dataBase
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     try {
+      // response the api / waiting data to be stored
       const response = await fetch('https://ingodx-backend.onrender.com/api/login', {
         method: 'POST',
         headers: {
@@ -87,6 +108,8 @@ const Login_Signup = () => {
     }
   };
 
+
+  // the script of changing mode sign up to login
   useEffect(() => {
     const sign_in_btn = document.querySelector("#sign-in-btn");
     const sign_up_btn = document.querySelector("#sign-up-btn");
@@ -110,15 +133,15 @@ const Login_Signup = () => {
   }, []);
 
 
-    // Function to get query parameters
-    function getQueryParams() {
-      const params = {};
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
-      urlParams.forEach((value, key) => {
-          params[key] = value;
-      });
-      return params;
+  // Function to get query parameters
+  function getQueryParams() {
+    const params = {};
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    urlParams.forEach((value, key) => {
+        params[key] = value;
+    });
+    return params;
   }
   
   // Check for 'mode' parameter and set the class accordingly
@@ -127,11 +150,12 @@ const Login_Signup = () => {
       document.querySelector('.container').classList.add('sign-up-mode');
   }
   
+  // the elements of the pages 
   return (
     <>
       <Navbar />
       <div className="containerl">
-        {/* <div>{getQueryParams()}</div> */}
+        <div>getQueryParams()</div>
         
         <div className="forms-container">
           <div className="signin-signup">
