@@ -43,12 +43,13 @@ footer section article {
     height: 100%;
     padding: 30px;
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 30px;
 }
 
 .footer-links .main-card {
-    width: 150px;
+    width: fit-content;
     height: auto;
 }
 
@@ -68,9 +69,9 @@ footer section article {
     text-decoration: underline;
 }
 
-.footer-links .main-card:last-child {
+/* .footer-links .main-card:last-child {
     width: 350px;
-}
+} */
 
 .outline {
     outline-style: none;

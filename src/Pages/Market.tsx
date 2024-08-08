@@ -57,7 +57,13 @@ function Market() {
         const range = document.querySelector("#range");
         range?.classList.add("step-tree");
         range?.classList.remove("step-two");
-
+        
+        //card of valid inscription
+        const endCard = document.querySelector("#end-card")
+        const all = document.querySelector("#all")
+        all?.classList.remove('no-display')
+        endCard?.classList.add('done')
+        
         e.preventDefault();
         try {
             const response = await fetch(
@@ -75,16 +81,11 @@ function Market() {
                 console.error("Error while storing delivery informations:", data);
             }
 
-            //card of valid inscription
-            const endCard = document.querySelector("#end-card")
-            const all = document.querySelector("#all")
-            all?.classList.remove('no-display')
-            endCard?.classList.add('done')
 
         } catch (error) {
             console.error("Error:", error);
 
-            //card of error inscription
+            // card of error inscription
             const endCardError = document.querySelector("#end-card-error")
             const allError = document.querySelector("#all-error")
             allError?.classList.remove('no-display')
@@ -135,7 +136,7 @@ function Market() {
             </div>
 
             <div className="form-cont-ainer">
-                <h2>Informations of the Business</h2>
+                <h2>Fill out Order informatins field please</h2>
                 <div className="stepsRange" id="stepsRange">
                     <div className="range " id="range"></div>
                 </div>
@@ -205,6 +206,7 @@ function Market() {
                                 placeholder="Product Image"
                                 value={formData.ProductImage}
                                 onChange={handleBusinessChange}
+                                
                             />
                         </div>
                         <div className="form-groupe">
@@ -213,7 +215,7 @@ function Market() {
                                 type="text"
                                 id="ProducsNumber"
                                 name="ProducsNumber"
-                                placeholder="Producs Number "
+                                placeholder="Producs quantity "
                                 value={formData.ProducsNumber}
                                 onChange={handleBusinessChange}
                                 required />
