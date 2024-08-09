@@ -46,7 +46,7 @@ function Navbar() {
     <header className={scrolled ? "scrolled" : ""}>
 
       <Link to="/"><div className="logo">
-        <img src="\src\assets\logo.jpg" alt="inGodx logo" />
+        <img src=".\src\assets\logo.jpg" alt="inGodx logo" />
         <h3>
           <span className="godx">in</span>
           <span className="in">Go</span>
