@@ -4,6 +4,10 @@ import '../styles/vedio.css'
 import '../styles/offers.css'
 import '../styles/advantages.css'
 import vedio from "../assets/WhatsAppb.mp4"
+import moto from "../assets/moto-bike.jpg"
+import bisicle from "../assets/bisicle.jpg"
+import truck from "../assets/truck.jpg"
+import homeDelivery from "../assets/intill-home.jpg"
 import { BackgroundGradientAnimation } from './ui/background-gradient-animation'
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { Link } from 'react-router-dom';
@@ -111,7 +115,7 @@ function Home() {
 
                         </div>
                         <div className="picture">
-                            <img src="/src/assets/intill-home.jpg" width="100%" alt="bisicle" />
+                            <img src={homeDelivery} width="100%" alt="bisicle" />
                         </div>
                     </div>
                 </article>
@@ -119,7 +123,7 @@ function Home() {
                 <article className="cardContainer">
                     <div className="scend cards">
                         <div className="picture">
-                            <img src="/src/assets/bisicle.jpg" width="100%" alt="bisicle" />
+                            <img src={bisicle} width="100%" alt="bisicle" />
                         </div>
                         <div className="text">
                             <h2 className="title">Delivering Excellence: Working with Ingodx Company.</h2>
@@ -143,7 +147,7 @@ function Home() {
 
                         </div>
                         <div className="picture">
-                            <img src="/src/assets/truck.jpg" width="100%" alt="bisicle" />
+                            <img src={truck} width="100%" alt="bisicle" />
                         </div>
                     </div>
                 </article>
