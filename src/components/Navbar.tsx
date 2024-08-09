@@ -27,12 +27,27 @@ function Navbar() {
 
   //responsive navBar
 
+  // useEffect(() => {
+  //   const menuBtn = document.querySelector(".menu-icon");
+  //   const nav = document.querySelector("#navbar");
+
+  //   const toggleMenu = () => {
+  //     if (nav) nav.classList.toggle("active");
+  //   };
+
+  //   if (menuBtn) menuBtn.addEventListener("click", toggleMenu);
+  //   return () => {
+  //     if (menuBtn) menuBtn.removeEventListener("click", toggleMenu);
+  //   };
+  // }, []);
+  
+
   useEffect(() => {
     const menuBtn = document.querySelector(".menu-icon");
-    const nav = document.querySelector("#navbar");
+    const nav = document.querySelector(".not-visible");
 
     const toggleMenu = () => {
-      if (nav) nav.classList.toggle("active");
+      if (nav) nav.classList.toggle("visible");
     };
 
     if (menuBtn) menuBtn.addEventListener("click", toggleMenu);
@@ -41,8 +56,8 @@ function Navbar() {
     };
   }, []);
 
-
   return (
+    <>
     //the className here is a condition to add a scrolling effect.
     <header className={scrolled ? "scrolled" : ""}>
 
@@ -56,8 +71,55 @@ function Navbar() {
         </h3>
       </div></Link>
 
-      <nav >
+      <nav className="head-navbar">
         <ul id="navbar">
+          {/* //link is a tool to help to navigate to other  pages like a tag*/}
+          {/* <li>
+            <Link to="/Profile">
+              <div>PFL</div>
+            </Link>
+          </li>
+          <li>
+            <Link to="/">
+              <div>Home</div>
+            </Link>
+          </li> */}
+          <li>
+            <Link to="/Market">
+              <div>Business</div>
+            </Link>
+          </li>
+          <li>
+            <Link to="/Delivery">
+              <div>Delivery</div>
+            </Link>
+          </li>
+          {/* <li><Link to = '/TsakherLiya'>Tsakher Liya</Link></li> */}
+          {/* <li>
+            <Link to="/About">
+              <div>About</div>
+            </Link>
+          </li> */}
+          <li>
+            <Link to="/Login">
+            
+              <button type="button" className="btn">
+                Sign In
+              </button>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+
+      <div className="menu-icon">
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+      </div>
+    </header>
+
+    <nav className="not-visible" id="side-bar">
+        <ul className="visible-list">
           {/* //link is a tool to help to navigate to other  pages like a tag*/}
           {/* <li>
             <Link to="/Profile">
@@ -94,13 +156,8 @@ function Navbar() {
           </li>
         </ul>
       </nav>
-
-      <div className="menu-icon">
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-      </div>
-    </header>
+    
+    </>
   );
 }
 

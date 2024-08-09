@@ -1,8 +1,8 @@
-header{
+header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100vw ;
+    width: 100vw;
     height: 70px;
     padding: 0 80px;
     background-color: white;
@@ -35,14 +35,14 @@ header{
     font-weight: 500;
 }
 
-nav ul {
+.head-navbar ul {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
 
-nav ul a {
+.head-navbar ul a {
     font-size: 16px;
     font-weight: 600;
     color: #636363;
@@ -50,21 +50,22 @@ nav ul a {
     transition: all 0.1s;
 }
 
-nav ul li {
+.head-navbar ul li {
     margin-right: 20px;
     transition: all 0.1s;
 }
 
-nav ul li:hover {
+.head-navbar ul li:hover {
     border-bottom: solid 4px var(--blu);
     color: #000000;
     font-size: 18px;
 }
-nav ul li:last-child:hover{
+
+.head-navbar ul li:last-child:hover {
     border-bottom: none;
 }
 
-nav ul a:hover {
+.head-navbar ul a:hover {
     color: #000000;
     font-size: 16px;
 }
@@ -85,30 +86,28 @@ nav ul a:hover {
 }
 
 @media (max-width: 800px) {
-    body{
-        position: relative;
-    }
     header {
         padding: 0 20px;
         margin: 0;
-        width: 100vw;    }
+        width: 100vw;
+    }
 
-    nav ul {
+    .head-navbar ul {
         position: absolute;
         top: 55px;
         left: 0;
         right: 0;
         display: flex;
         flex-direction: column;
-        background-image: linear-gradient(to bottom , white ,rgb(176, 252, 255));
+        background-image: linear-gradient(to bottom, white, rgb(176, 252, 255));
         transition: all 0.5s;
         height: 0px;
         overflow: hidden;
-        z-index: 9999999999999999999999999999999999999999999999;
+        z-index: 9999999;
         opacity: 1;
     }
 
-    nav ul {
+    .head-navbar ul {
         display: block;
         width: 100vw;
         margin: 0 auto;
@@ -117,15 +116,52 @@ nav ul a:hover {
 
     nav ul li div {
         padding: 20px;
+        border-bottom: solid 1px lightgray;
+        
+    }
+    nav ul li {
+        width: 100vw;
+        
     }
 
     .menu-icon {
         display: block;
     }
 
-    nav ul.active {
-        height: 400px;
+    .head-navbar ul.active {
+        height: 200px;
         opacity: 1;
         overflow: hidden;
     }
+}
+
+
+.not-visible {
+    /* display: none; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: start;
+    flex-direction: column;
+    height: 100vh;
+    width: 0px;
+    padding: 0px;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    border-left: lightgray 1px solid;
+    z-index: 1000;
+    background-color: rgb(255, 255, 255);
+    transition: all .5s;
+}
+
+.visible-list {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.visible {
+    width: 70% !important;
+    transition: all .5s;
 }
