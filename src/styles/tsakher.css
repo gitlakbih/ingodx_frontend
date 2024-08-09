@@ -1,4 +1,4 @@
-
+/* 
 
 .glass-form-groupe{
     margin-left:40px;
@@ -13,4 +13,25 @@
     border: 1px solid #bdbdbd4e;
     border-radius: 7px;
     margin-top: 100px;
+} */
+
+.both{
+    display: flex;
+    padding: 0 3rem;
+    gap: 20px;
+    .form-groupe{
+        width: 400px;
+        margin-right: 0;
+        margin-left: 0;
+
+    }
+    
+}
+
+.form-cont-ainer{
+    margin: 70px auto 0;
+}
+
+.form-groupe textarea{
+    height: 150px;
 }

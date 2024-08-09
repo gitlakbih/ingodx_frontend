@@ -136,7 +136,7 @@ function Market() {
             </div>
 
             <div className="form-cont-ainer">
-                <h2>Fill out Order informatins field please</h2>
+                <h2>Fill in Order informatins field please</h2>
                 <div className="stepsRange" id="stepsRange">
                     <div className="range " id="range"></div>
                 </div>

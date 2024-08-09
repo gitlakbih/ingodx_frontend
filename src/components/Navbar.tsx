@@ -79,12 +79,12 @@ function Navbar() {
               <div>Delivery</div>
             </Link>
           </li>
-          {/* <li><Link to = '/TsakherLiya'>Tsakher Liya</Link></li> */}
-          <li>
+          <li><Link to = '/TsakherLiya'>Tsakher Liya</Link></li>
+          {/* <li>
             <Link to="/About">
               <div>About</div>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/Login">
               <button type="button" className="btn">

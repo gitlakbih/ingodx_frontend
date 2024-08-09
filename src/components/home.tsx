@@ -42,7 +42,7 @@ function Home() {
             <BackgroundGradientAnimation>
                 <div
                 // className="absolute z-50 inset-0 flex items-center justify-center pointer-events-none "
-                className="absolute z-50 inset-0 pointer-events-none "
+                className="absolute z-50 inset-0 "
                 >
                     <section className="introduction">
 
@@ -62,10 +62,10 @@ function Home() {
                             Get Whatever You Need, Whenever You Like, From Wherever You Want
                         </p>
                         <div>
-                            <a href="/USER%20V-0.0.0/IDE.HTML">
-                                <Link to='/Login?mode=signup'><button id='#get' type="button" className="btn">Get Started</button></Link>
+                            
+                        <Link to='/TsakherLiya'><button type="button" className="btn">Set Order</button></Link>
 
-                            </a>
+                            
                         </div>
                     </section>
                 </div>
