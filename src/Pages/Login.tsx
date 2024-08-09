@@ -151,7 +151,7 @@ const Login_Signup = () => {
     <>
       <Navbar />
       <div className="containerl">
-        <div>getQueryParams()</div>
+{/*         <div>getQueryParams()</div> */}
 
         <div className="forms-container">
           <div className="signin-signup">
