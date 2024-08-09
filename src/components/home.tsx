@@ -3,6 +3,7 @@ import '../styles/introduction.css'
 import '../styles/vedio.css'
 import '../styles/offers.css'
 import '../styles/advantages.css'
+import vedio from "../assets/WhatsAppb.mp4"
 import { BackgroundGradientAnimation } from './ui/background-gradient-animation'
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { Link } from 'react-router-dom';
@@ -76,7 +77,7 @@ function Home() {
                             <div className="video">
                                 <video id="player" playsInline autoPlay controls>
                                     <source
-                                        src="/src/assets/WhatsAppb.mp4"
+                                        src={vedio}
                                         type="video/mp4"
                                     />
                                 </video>
