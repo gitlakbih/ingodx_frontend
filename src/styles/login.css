@@ -400,7 +400,7 @@ form.sign-in-form {
 
 @media (max-width: 570px) {
   form {
-    padding: 0 20px;
+    padding: 50px 20px;
     width: 100vw;
   }
 
@@ -424,7 +424,7 @@ form.sign-in-form {
     left: 50%;
   }
   form.sign-up-form{
-    padding: 20px;
+    padding:50px 20px;
     height: 850px;
     justify-content: normal;
   }
