@@ -158,7 +158,7 @@ const Login_Signup = () => {
             <form onSubmit={handleSubmitLogin} className="sign-in-form">
               <h2 className="title">Sign in</h2>
               <div className="input-field">
-                <i className="fas fa-user"></i>
+                <i className="fa-solid fa-user"></i>
                 <input
                   type="text"
                   name="username"
