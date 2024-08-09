@@ -1,5 +1,6 @@
 import "../styles/navigation.css";
 import "../styles/main.css";
+import logo from '../assets/logo.jpg'
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -46,7 +47,8 @@ function Navbar() {
     <header className={scrolled ? "scrolled" : ""}>
 
       <Link to="/"><div className="logo">
-        <img src="\assets\imgs\logo.jpg" alt="inGodx logo" />
+        {/* <img src="\assets\imgs\logo.jpg" alt="inGodx logo" /> */}
+        <img src={logo} alt="inGodx logo" />
         <h3>
           <span className="godx">in</span>
           <span className="in">Go</span>
