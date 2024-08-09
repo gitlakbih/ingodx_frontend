@@ -30,7 +30,7 @@ function Profile() {
       console.error('Access token not found');
       navigate('/');
     }
-  }, []);
+  });
 
 
 
@@ -57,5 +57,5 @@ function Profile() {
       </div>
     </div>
   )
-};
+}
 export default Profile;

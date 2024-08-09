@@ -17,22 +17,22 @@ const Login_Signup = () => {
     user_type: '',
     full_name: ''
   });
-  
-  
+
+
   // the functions for the sign up 
   // handleChange of the inputs to get data 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
       ...prevState,
       [name]: value
     }));
   };
-  
+
   // handleSubmit of the Form to submit and send data to dataBase
   // Notice -- should change fetch to axios
   // --> axios much better ans easy to use
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await fetch('https://ingodx-backend.onrender.com/api/register', {
@@ -63,21 +63,29 @@ const Login_Signup = () => {
   const [error, setError] = useState('');
   // user Login stored here
   const [formDataLogin, setFormDataLogin] = useState({
-    username: '', 
-    password: '' 
+    username: '',
+    password: ''
   });
 
   // handleChange of the login inputs to get data 
-  const handleChangeLogin = (e) => {
+  const handleChangeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormDataLogin((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
-  
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
   // handleSubmit of the login inputs to send data to dataBase
-  const handleSubmitLogin = async (e) => {
+  const handleSubmitLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       // response the api / waiting data to be stored
@@ -94,7 +102,7 @@ const Login_Signup = () => {
         const access_token = data.access_token;
         Cookies.set('access_token', access_token, { expires: 7 }); // Expires in 7 days
         navigate('/Profile');
-        
+
         // else {
         //   setError('Password incorrect');
         // }
@@ -133,30 +141,15 @@ const Login_Signup = () => {
   }, []);
 
 
-  // Function to get query parameters
-  function getQueryParams() {
-    const params = {};
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    urlParams.forEach((value, key) => {
-        params[key] = value;
-    });
-    return params;
-  }
-  
-  // Check for 'mode' parameter and set the class accordingly
-  const queryParams = getQueryParams();
-  if (queryParams.mode === 'signup') {
-      document.querySelector('.container').classList.add('sign-up-mode');
-  }
-  
+ 
+
   // the elements of the pages 
   return (
     <>
       <Navbar />
       <div className="containerl">
         <div>getQueryParams()</div>
-        
+
         <div className="forms-container">
           <div className="signin-signup">
             <form onSubmit={handleSubmitLogin} className="sign-in-form">
@@ -245,8 +238,8 @@ const Login_Signup = () => {
                 />
               </div>
               <div className="input-field">
-              <i className=" fas fa-solid fa-check"></i>
-                <select name="type" id="type" onChange={handleChange}>
+                <i className=" fas fa-solid fa-check"></i>
+                <select name="type" id="type" onChange={handleSelectChange}>
                   <option value="">Select an Obtion</option>
                   <option value="customer">Customer</option>
                   <option value="deliver">Deliver</option>
@@ -285,7 +278,7 @@ const Login_Signup = () => {
           </div>
         </div>
       </div>
-      
+
     </>
   );
 };
