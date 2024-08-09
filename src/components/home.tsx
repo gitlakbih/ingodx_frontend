@@ -110,7 +110,7 @@ function Home() {
                             <p className="paragraph">
                                 Home delivery services have revolutionized shopping, offering unmatched convenience. With a few clicks, customers can receive groceries, meals, and more at their doorstep quickly and reliably. Advanced logistics and real-time tracking ensure flexible and efficient delivery, fitting seamlessly into busy lives. This integration boosts consumer satisfaction and helps businesses expand their reach.
                             </p>
-                            <Link to='/TsakherLiya'><button type="button" className="btn">Sign UP</button></Link>
+                            <Link to='/TsakherLiya'><button type="button" className="btn">set new order</button></Link>
 
                         </div>
                         <div className="picture">
@@ -129,7 +129,7 @@ function Home() {
                             <p className="paragraph">
                                 Working with Ingodx Company offers a dynamic and rewarding experience for delivery professionals. Ingodx is a leader in efficiency and customer satisfaction, providing competitive pay, flexible schedules, and a supportive work environment. Advanced technology and logistics ensure smooth operations, allowing drivers to excel in their roles. Joining Ingodx means being part of a team dedicated to delivering excellence.
                             </p>
-                            <Link to='/Delivery'><button type="button" className="btn">Sign UP</button></Link>
+                            <Link to='/Delivery'><button type="button" className="btn">aply now</button></Link>
 
                         </div>
                     </div>
@@ -142,7 +142,7 @@ function Home() {
                             <p className="paragraph">
                                 Ingodx provides businesses with reliable, efficient delivery services. Focused on punctuality and precision, Ingodx ensures timely and secure package arrivals. Advanced logistics and real-time tracking offer transparency and peace of mind. Partnering with Ingodx boosts customer satisfaction and supports business growth.
                             </p>
-                            <Link to='/Market'> <button type="button" className="btn">Sign UP</button></Link>
+                            <Link to='/Market'> <button type="button" className="btn">place new order</button></Link>
 
                         </div>
                         <div className="picture">

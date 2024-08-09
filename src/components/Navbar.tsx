@@ -79,7 +79,7 @@ function Navbar() {
               <div>Delivery</div>
             </Link>
           </li>
-          <li><Link to = '/TsakherLiya'>Tsakher Liya</Link></li>
+          {/* <li><Link to = '/TsakherLiya'>Tsakher Liya</Link></li> */}
           {/* <li>
             <Link to="/About">
               <div>About</div>

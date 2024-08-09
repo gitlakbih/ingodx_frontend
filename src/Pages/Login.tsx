@@ -141,6 +141,9 @@ const Login_Signup = () => {
   }, []);
 
 
+
+
+  
  
 
   // the elements of the pages 
@@ -230,7 +233,7 @@ const Login_Signup = () => {
                 <i className="fas fa-lock"></i>
                 <input
                   type="password"
-                  name="password"
+                  name="isPassword"
                   placeholder="Confirm Password"
                   value={formData.isPassword}
                   onChange={handleChange}

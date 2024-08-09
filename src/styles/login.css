@@ -392,12 +392,16 @@ form.sign-in-form {
     padding: 50px;
     padding-top: 280px;
   }
+  form {
+    width: 100vw;
+  }
   
 }
 
 @media (max-width: 570px) {
   form {
-    padding: 0 1.5rem;
+    padding: 0 20px;
+    width: 100vw;
   }
 
   .image {
@@ -420,12 +424,12 @@ form.sign-in-form {
     left: 50%;
   }
   form.sign-up-form{
-    padding: 50px;
+    padding: 20px;
     height: 850px;
     justify-content: normal;
   }
   form.sign-in-form{
-    padding: 50px;
+    padding: 20px;
     padding-top: 280px;
   }
 }
