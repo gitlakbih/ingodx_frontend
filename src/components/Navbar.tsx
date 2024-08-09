@@ -55,10 +55,9 @@ function Navbar() {
       if (menuBtn) menuBtn.removeEventListener("click", toggleMenu);
     };
   }, []);
-
   return (
     <>
-    //the className here is a condition to add a scrolling effect.
+    {/* //the className here is a condition to add a scrolling effect. */}
     <header className={scrolled ? "scrolled" : ""}>
 
       <Link to="/"><div className="logo">
