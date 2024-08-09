@@ -24,7 +24,7 @@ function Market() {
     });
 
     // handleDeliveryChange of the inputs to get data
-    const handleBusinessChange = (e) => {
+    const handleBusinessChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData((prevState) => ({
             ...prevState,
@@ -51,7 +51,7 @@ function Market() {
     };
 
     // handleBusinessSubmit to store data to database
-    const handleBusinessSubmit = async (e) => {
+    const handleBusinessSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         //test
         console.log(formData)
         const range = document.querySelector("#range");
@@ -264,7 +264,7 @@ function Market() {
                         </div>
                         <div className="form-groupe">
                             <button type="submit" id="btn"
-                                onClick={handleBusinessSubmit}
+                                // onClick={handleBusinessSubmit}
                                 className="btnn">
                                 Confirm
                             </button>
