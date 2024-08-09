@@ -1,7 +1,7 @@
 import '../styles/login.css';
 import Navbar from '../components/Navbar';
 import { useEffect, useState } from 'react';
-// import Cookies from 'js-cookie';
+import Cookies from 'js-cookie';
 // import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 

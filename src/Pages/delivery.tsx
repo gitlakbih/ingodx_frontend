@@ -23,7 +23,15 @@ function Delivery() {
   });
 
   // handleDeliveryChange of the inputs to get data 
-  const handleDeliveryChange = (e) => {
+  const handleDeliveryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
       ...prevState,
@@ -34,7 +42,7 @@ function Delivery() {
 
   // handleDeliverySubmit to store data to database
   //Need more edition//no API used
-  const handleDeliverySubmit = async (e) => {
+  const handleDeliverySubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
     //test
     console.log(formData)
@@ -73,7 +81,7 @@ function Delivery() {
       const allError = document.querySelector("#all-error")
       allError?.classList.remove('no-display')
       endCardError?.classList.add('done')
-      
+
     }
   };
 
@@ -81,7 +89,7 @@ function Delivery() {
   const handleButtonClick = () => {
     navigate('/');
   }
-  
+
   const handleErrorButtonClick = () => {
     navigate('/');
   }
@@ -239,7 +247,7 @@ function Delivery() {
               id="mot"
               name="Transport"
               value={formData.Transport}
-              onChange={handleDeliveryChange}
+              onChange={handleSelectChange}
               required
 
             >
@@ -257,7 +265,7 @@ function Delivery() {
               id="WorkedAsDelivery"
               name="WorkedAsDelivery"
               value={formData.WorkedAsDelivery}
-              onChange={handleDeliveryChange}
+              onChange={handleSelectChange}
               required
 
             >

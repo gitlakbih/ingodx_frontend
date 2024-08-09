@@ -1,5 +1,5 @@
 import '../styles/profile.css'
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { useAuth } from '../contexts/AuthContext';
