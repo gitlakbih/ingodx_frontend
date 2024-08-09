@@ -4,7 +4,6 @@ import '../styles/vedio.css'
 import '../styles/offers.css'
 import '../styles/advantages.css'
 import vedio from "../assets/WhatsAppb.mp4"
-import moto from "../assets/moto-bike.jpg"
 import bisicle from "../assets/bisicle.jpg"
 import truck from "../assets/truck.jpg"
 import homeDelivery from "../assets/intill-home.jpg"
