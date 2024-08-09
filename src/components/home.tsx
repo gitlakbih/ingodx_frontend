@@ -3,7 +3,7 @@ import '../styles/introduction.css'
 import '../styles/vedio.css'
 import '../styles/offers.css'
 import '../styles/advantages.css'
-import vedio from "../assets/WhatsAppb.mp4"
+import vedio from "../assets/WhatsAppbb.mp4"
 import bisicle from "../assets/bisicle.jpg"
 import truck from "../assets/truck.jpg"
 import homeDelivery from "../assets/intill-home.jpg"
