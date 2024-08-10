@@ -35,3 +35,23 @@
 .form-groupe textarea{
     height: 150px;
 }
+
+@media (max-width:700px) {
+    .both{padding: 0;}
+    .both .form-groupe{
+        margin: 0;
+    }
+}
+
+@media (max-width:300px) {
+    .both{
+        display: block;
+    }
+    .both .form-groupe{
+        width: 100%;
+    }
+    .both .form-groupe:first-child{
+        margin-bottom: 15px;
+    }
+    
+}
