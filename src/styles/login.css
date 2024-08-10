@@ -306,12 +306,15 @@ form.sign-in-form {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 2.5rem 8%;
+    /* padding: 2.5rem 8%; */
+    padding: 0;
+    margin: 2.5rem 8%;
     grid-column: 1 / 2;
   }
 
   .right-panel {
-    grid-row: 3 / 4;
+    /* grid-row: 3 / 4; */
+    grid-row: 4 / 4;
   }
 
   .left-panel {
@@ -410,6 +413,7 @@ form.sign-in-form {
   .panel .content {
     padding: 0.5rem 1rem;
   }
+
   .containerl {
     padding: 1.5rem;
   }
@@ -432,4 +436,15 @@ form.sign-in-form {
     padding:50px 30px;
     padding-top: 280px;
   }
+}
+@media (max-width:425px) {
+  .panel {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+
+.right-panel::-webkit-scrollbar{
+  display: none;
 }
