@@ -129,7 +129,7 @@ function Home() {
                             <p className="paragraph">
                                 Working with Ingodx Company offers a dynamic and rewarding experience for delivery professionals. Ingodx is a leader in efficiency and customer satisfaction, providing competitive pay, flexible schedules, and a supportive work environment. Advanced technology and logistics ensure smooth operations, allowing drivers to excel in their roles. Joining Ingodx means being part of a team dedicated to delivering excellence.
                             </p>
-                            <Link to='/Delivery'><button type="button" className="btn">aply now</button></Link>
+                            <Link to='/Delivery'><button type="button" className="btn">apply now</button></Link>
 
                         </div>
                     </div>
