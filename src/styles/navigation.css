@@ -7,7 +7,6 @@ header {
     padding: 0 80px;
     background-color: white;
     z-index: 99;
-    transition: all 0.5s;
     position: fixed;
     top: 0;
     border-bottom: #63636343 solid 1px;
@@ -72,14 +71,14 @@ header {
 
 .menu-icon {
     display: none;
-    height: 40px;
+    height: 30px;
     width: 40px;
     cursor: pointer;
 }
 
 .menu-icon .line {
-    height: 6px;
-    width: 35px;
+    height: 4px;
+    width: 30px;
     background-color: var(--blu);
     margin: 4px auto;
     border-radius: 10px;
@@ -90,6 +89,13 @@ header {
         padding: 0 20px;
         margin: 0;
         width: 100vw;
+        height: 55px;
+    }
+    .logo img{
+        display: none;
+    }
+    .logo h3 {
+        font-size: 27px;
     }
 
     .head-navbar ul {
@@ -125,7 +131,8 @@ header {
     }
 
     .menu-icon {
-        display: block;
+        display: block;       
+
     }
 
     .head-navbar ul.active {
@@ -147,9 +154,8 @@ header {
     width: 0px;
     padding: 0px;
     position: fixed;
-    top: 70px;
+    top: 55px;
     right: 0;
-    border-left: lightgray 1px solid;
     z-index: 1000;
     background-color: rgb(255, 255, 255);
     transition: all .5s;
@@ -163,5 +169,7 @@ header {
 
 .visible {
     width: 70% !important;
+    border-left: lightgray 1px solid;
     transition: all .5s;
+
 }
