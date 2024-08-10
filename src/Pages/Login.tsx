@@ -243,7 +243,7 @@ const Login_Signup = () => {
               <div className="input-field">
                 <i className=" fas fa-solid fa-check"></i>
                 <select name="type" id="type" onChange={handleSelectChange}>
-                  <option value="">Select an Obtion</option>
+                  <option value="">Select an Option</option>
                   <option value="customer">Customer</option>
                   <option value="deliver">Deliver</option>
                   <option value="establishment">Establishment</option>
