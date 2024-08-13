@@ -60,8 +60,10 @@ const Login_Signup = () => {
       const data = await response.json();
       if (response.ok) {
         console.log('User registered successfully:', data);
+        navigate('/Profile');
       } else {
         console.error('Error registering user:', data);
+        setError('Username or email all ready registred')
       }
     } catch (error) {
       console.error('Error:', error);
