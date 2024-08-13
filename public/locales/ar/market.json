@@ -1,0 +1,32 @@
+{
+  "market": {
+    "formTitle": "يرجى ملء حقول معلومات الطلب",
+    "businessMobileLabel": "رقم جوال العمل",
+    "businessMobilePlaceholder": "رقم جوال العمل",
+    "businessCityLabel": "مدينة العمل",
+    "businessCityPlaceholder": "مدينة العمل",
+    "businessAddressLabel": "عنوان العمل",
+    "businessAddressPlaceholder": "عنوان العمل",
+    "productTypeLabel": "نوع المنتج",
+    "productTypePlaceholder": "نوع المنتج",
+    "productImageLabel": "صورة المنتج",
+    "productImageOptional": "(اختياري)",
+    "productImagePlaceholder": "صورة المنتج",
+    "productsNumberLabel": "عدد المنتجات",
+    "productsNumberPlaceholder": "كمية المنتجات",
+    "customerNameLabel": "اسم العميل",
+    "customerNamePlaceholder": "اسم العميل",
+    "customerMobileLabel": "رقم جوال العميل",
+    "customerMobilePlaceholder": "رقم جوال العميل",
+    "customerAddressLabel": "عنوان العميل",
+    "customerAddressPlaceholder": "عنوان العميل",
+    "nextButton": "التالي",
+    "confirmButton": "تأكيد",
+    "orderSentMessage": "تم إرسال طلبك",
+    "supportTeamMessage": "سيتصل بك فريق الدعم قريباً",
+    "orderSentOkButton": "حسناً",
+    "errorTitle": "خطأ",
+    "errorMessage": "هناك مشكلة، حاول مرة أخرى",
+    "errorOkButton": "حسناً"
+  }
+}

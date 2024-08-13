@@ -1,0 +1,22 @@
+{
+    "footer": {
+        "links": {
+            "title": "روابط",
+            "home": "الرئيسية",
+            "delivery": "التوصيل",
+            "market": "الأعمال",
+            "about": "من نحن"
+        },
+        "follow-us": {
+            "title": "تابعنا",
+            "instagram": "إنستغرام",
+            "facebook": "فيسبوك",
+            "whatsapp": "واتساب"
+        },
+        "Contact-us": {
+            "title": "اتصل بنا"
+        },
+        "rights": "جميع الحقوق محفوظة",
+        "team": "فريقنا"
+    }
+}

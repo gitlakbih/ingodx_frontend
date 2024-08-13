@@ -1,0 +1,23 @@
+{
+  "sign_in": "Se connecter",
+  "sign_up": "S'inscrire",
+  "username": "Nom d'utilisateur",
+  "full_name": "Nom complet",
+  "email": "E-mail",
+  "password": "Mot de passe",
+  "confirm_password": "Confirmer le mot de passe",
+  "user_type": "Type d'utilisateur",
+  "select_an_option": "Sélectionnez une option",
+  "customer": "Client",
+  "deliver": "Livreur",
+  "etablissment": "Établissement",
+  "other": "Autre",
+  "login": "Connexion",
+  "signup": "Inscription",
+  "new_here": "Nouveau ici ?",
+  "explore_more": "Prêt à explorer davantage ? Inscrivez-vous et personnalisez votre expérience avec les outils et ressources de notre plateforme.",
+  "join_us_again": "Rejoignez-nous à nouveau !",
+  "welcome_back": "Bon retour ! Veuillez entrer votre nom d'utilisateur et votre mot de passe pour accéder à votre compte.",
+  "error_password_incorrect": "Mot de passe incorrect",
+  "error_occurred": "Une erreur est survenue"
+}

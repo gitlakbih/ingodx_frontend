@@ -1,0 +1,54 @@
+{
+    "home": {
+        "introduction": {
+            "title": {
+                "part1": "In",
+                "part2": "Go",
+                "part3": "dx ",
+                "part4": "Votre "
+            },
+            "subtitle1": "Avec",
+            "subtitle2": "Obtenez tout ce dont vous avez besoin, quand vous le souhaitez, où que vous soyez",
+            "setOrderButton": "Passer une commande"
+        },
+        "offers": {
+            "title": "Nos services",
+            "homeDelivery": {
+                "title": "Services de livraison à domicile efficaces : Révolutionner le confort et la commodité",
+                "description": "Les services de livraison à domicile ont révolutionné les achats, offrant une commodité inégalée. En quelques clics, les clients peuvent recevoir leurs courses, repas et bien plus encore à leur porte, rapidement et de manière fiable. Une logistique avancée et un suivi en temps réel assurent une livraison flexible et efficace, s'intégrant parfaitement dans des vies bien remplies. Cette intégration améliore la satisfaction des consommateurs et aide les entreprises à élargir leur portée.",
+                "setNewOrderButton": "Nouvelle commande"
+            },
+            "ingodx": {
+                "title": "L'excellence de la livraison : Travailler avec Ingodx",
+                "description": "Travailler avec Ingodx offre une expérience dynamique et gratifiante pour les professionnels de la livraison. Ingodx est un leader en matière d'efficacité et de satisfaction client, offrant une rémunération compétitive, des horaires flexibles et un environnement de travail favorable. Une technologie et une logistique avancées assurent des opérations fluides, permettant aux livreurs d'exceller dans leurs rôles. Rejoindre Ingodx, c'est faire partie d'une équipe dédiée à l'excellence de la livraison.",
+                "applyNowButton": "Postuler maintenant"
+            },
+            "businessPartner": {
+                "title": "Ingodx : Votre partenaire de livraison fiable pour entreprises",
+                "description": "Ingodx fournit aux entreprises des services de livraison fiables et efficaces. Axé sur la ponctualité et la précision, Ingodx garantit l'arrivée des colis en temps voulu et en toute sécurité. Une logistique avancée et un suivi en temps réel offrent transparence et tranquillité d'esprit. Le partenariat avec Ingodx améliore la satisfaction des clients et soutient la croissance des entreprises.",
+                "placeNewOrderButton": "Passer une nouvelle commande"
+            }
+        },
+        "advantages": {
+            "title": "Découvrez les avantages d'inGodx",
+            "cards": {
+                "quickAndEasy": {
+                    "title": "Rapide et facile à utiliser",
+                    "description": "Les clients peuvent programmer leurs livraisons rapidement en ligne, évitant les délais traditionnels et assurant une expérience fluide."
+                },
+                "securePlatform": {
+                    "title": "Plateforme sécurisée",
+                    "description": "Notre plateforme certifiée SOC-2 Type 2, avec des tests de pénétration continus, garantit la sécurité de vos livraisons et de vos informations."
+                },
+                "expertSupport": {
+                    "title": "Support expert",
+                    "description": "Une équipe de support dédiée est disponible pour vous assister dans tous vos besoins de livraison, offrant un service sans faille et une satisfaction client optimale."
+                },
+                "transparency": {
+                    "title": "Transparence à chaque étape",
+                    "description": "Profitez d'un suivi en temps réel de vos livraisons, avec une visibilité complète sur l'état de vos colis, assurant fiabilité et tranquillité d'esprit."
+                }
+            }
+        }
+    }
+}

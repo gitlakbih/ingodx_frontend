@@ -1,0 +1,54 @@
+{
+    "home": {
+        "introduction": {
+            "title": {
+                "part1": "In",
+                "part2": "Go",
+                "part3": "dx ",
+                "part4": "Your "
+            },
+            "subtitle1": "With",
+            "subtitle2": "Get Whatever You Need, Whenever You Like, From Wherever You Want",
+            "setOrderButton": "Set Order"
+        },
+        "offers": {
+            "title": "what we offer",
+            "homeDelivery": {
+                "title": "Efficient Home Delivery Services: Revolutionizing Convenience and Comfort.",
+                "description": "Home delivery services have revolutionized shopping, offering unmatched convenience. With a few clicks, customers can receive groceries, meals, and more at their doorstep quickly and reliably. Advanced logistics and real-time tracking ensure flexible and efficient delivery, fitting seamlessly into busy lives. This integration boosts consumer satisfaction and helps businesses expand their reach.",
+                "setNewOrderButton": "set new order"
+            },
+            "ingodx": {
+                "title": "Delivering Excellence: Working with Ingodx Company.",
+                "description": "Working with Ingodx Company offers a dynamic and rewarding experience for delivery professionals. Ingodx is a leader in efficiency and customer satisfaction, providing competitive pay, flexible schedules, and a supportive work environment. Advanced technology and logistics ensure smooth operations, allowing drivers to excel in their roles. Joining Ingodx means being part of a team dedicated to delivering excellence.",
+                "applyNowButton": "apply now"
+            },
+            "businessPartner": {
+                "title": "Ingodx: Your Reliable Business Delivery Partner",
+                "description": "Ingodx provides businesses with reliable, efficient delivery services. Focused on punctuality and precision, Ingodx ensures timely and secure package arrivals. Advanced logistics and real-time tracking offer transparency and peace of mind. Partnering with Ingodx boosts customer satisfaction and supports business growth.",
+                "placeNewOrderButton": "place new order"
+            }
+        },
+        "advantages": {
+            "title": "Experience The inGodx Advantage",
+            "cards": {
+                "quickAndEasy": {
+                    "title": "Quick & Easy to Use",
+                    "description": "Customers can schedule deliveries quickly online, avoiding traditional delays and ensuring a smooth experience."
+                },
+                "securePlatform": {
+                    "title": "Secure Platform",
+                    "description": "Our SOC-2 Type 2 certified platform, with ongoing penetration testing, ensures your deliveries and information remain secure."
+                },
+                "expertSupport": {
+                    "title": "Expert Support",
+                    "description": "A dedicated support team is available to assist with all delivery needs, providing seamless service and customer satisfaction."
+                },
+                "transparency": {
+                    "title": "Transparency at Every Step",
+                    "description": "Enjoy real-time tracking of deliveries, with complete visibility into package status, ensuring reliability and peace of mind."
+                }
+            }
+        }
+    }
+}

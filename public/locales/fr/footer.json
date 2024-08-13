@@ -1,0 +1,22 @@
+{
+    "footer": {
+        "links": {
+            "title": "Liens",
+            "home": "Accueil",
+            "delivery": "Livraison",
+            "market": "Affaires",
+            "about": "À propos"
+        },
+        "follow-us": {
+            "title": "Suivez-nous",
+            "instagram": "Instagram",
+            "facebook": "Facebook",
+            "whatsapp": "Whatsapp"
+        },
+        "Contact-us": {
+            "title": "Contactez-nous"
+        },
+        "rights": "Tous droits réservés",
+        "team": "Notre équipe"
+    }
+}

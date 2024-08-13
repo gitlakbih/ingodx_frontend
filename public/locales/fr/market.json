@@ -1,0 +1,32 @@
+{
+  "market": {
+    "formTitle": "Veuillez remplir les champs d'informations de commande",
+    "businessMobileLabel": "Téléphone mobile de l'entreprise",
+    "businessMobilePlaceholder": "Téléphone mobile de l'entreprise",
+    "businessCityLabel": "Ville de l'entreprise",
+    "businessCityPlaceholder": "Ville de l'entreprise",
+    "businessAddressLabel": "Adresse de l'entreprise",
+    "businessAddressPlaceholder": "Adresse de l'entreprise",
+    "productTypeLabel": "Type de produit",
+    "productTypePlaceholder": "Type de produit",
+    "productImageLabel": "Image du produit",
+    "productImageOptional": "(Optionnel)",
+    "productImagePlaceholder": "Image du produit",
+    "productsNumberLabel": "Nombre de produits",
+    "productsNumberPlaceholder": "Quantité des produits",
+    "customerNameLabel": "Nom du client",
+    "customerNamePlaceholder": "Nom du client",
+    "customerMobileLabel": "Téléphone mobile du client",
+    "customerMobilePlaceholder": "Téléphone mobile du client",
+    "customerAddressLabel": "Adresse du client",
+    "customerAddressPlaceholder": "Adresse du client",
+    "nextButton": "Suivant",
+    "confirmButton": "Confirmer",
+    "orderSentMessage": "Votre commande a été envoyée",
+    "supportTeamMessage": "L'équipe de support vous contactera bientôt",
+    "orderSentOkButton": "D'accord",
+    "errorTitle": "Erreur",
+    "errorMessage": "Il y a un problème, essayez à nouveau",
+    "errorOkButton": "D'accord"
+  }
+}

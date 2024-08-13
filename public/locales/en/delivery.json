@@ -1,0 +1,39 @@
+{
+    "validCard":{
+        "title":"Thank you",
+        "message": "support team will call you soon",
+        "button":"Okey"
+    },
+    "errorCard":{
+        "title":"Error",
+        "message": "there is a problem try again",
+        "button":"Okey"
+    },
+    "title":{
+        "part1":"Please enter the",
+        "part2":"Required",
+        "part3":"information below"
+    },
+    "fname":"First Name",
+    "lname":"Last Name",
+    "email":"Email",
+    "mobileNumber":"Mobile Number",
+    "birthDate":"Birth Date",
+    "country":"Country",
+    "state":"State",
+    "city":"City",
+    "neighborhood":"Neighborhood",
+    "transportation":{
+        "label":"Means of transportation",
+        "option1":"Bike",
+        "option2":"Motorcycle",
+        "option3":"Electric Bike",
+        "option4":"Else"
+    },
+    "experions":{
+        "label":"Do you ever worked with a deliver company ?",
+        "option1":"No, I do not",
+        "option2":"Yes, I do"
+    },
+    "sendButton":"send"
+}

@@ -1,0 +1,10 @@
+{
+    "title": "تسخر ليا",
+    "name": "الاسم",
+    "lastName": "اللقب",
+    "mobileNumber": "رقم الجوال",
+    "adresse": "العنوان",
+    "order": "وصف الطلب",
+    "message": "رسالة",
+    "confirmButton": "تأكيد الطلب"
+}

@@ -1,0 +1,39 @@
+{
+    "validCard": {
+        "title": "Merci",
+        "message": "L'équipe de support vous appellera bientôt",
+        "button": "D'accord"
+    },
+    "errorCard": {
+        "title": "Erreur",
+        "message": "Il y a un problème, réessayez",
+        "button": "D'accord"
+    },
+    "title": {
+        "part1": "Veuillez entrer les",
+        "part2": "informations requises",
+        "part3": "ci-dessous"
+    },
+    "fname": "Prénom",
+    "lname": "Nom de famille",
+    "email": "Email",
+    "mobileNumber": "Numéro de téléphone",
+    "birthDate": "Date de naissance",
+    "country": "Pays",
+    "state": "État",
+    "city": "Ville",
+    "neighborhood": "Quartier",
+    "transportation": {
+        "label": "Moyen de transport",
+        "option1": "Vélo",
+        "option2": "Moto",
+        "option3": "Vélo électrique",
+        "option4": "Autre"
+    },
+    "experions": {
+        "label": "Avez-vous déjà travaillé avec une entreprise de livraison?",
+        "option1": "Non, je n'ai pas",
+        "option2": "Oui, j'ai"
+    },
+    "sendButton": "Envoyer"
+}

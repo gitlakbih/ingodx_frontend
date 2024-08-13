@@ -1,0 +1,33 @@
+{
+    "market": {
+      "formTitle": "Fill in Order informations field please",
+      "businessMobileLabel": "Business Mobile",
+      "businessMobilePlaceholder": "Business Mobile",
+      "businessCityLabel": "Business City",
+      "businessCityPlaceholder": "Business City",
+      "businessAddressLabel": "Business Address",
+      "businessAddressPlaceholder": "Business Address",
+      "productTypeLabel": "Product Type",
+      "productTypePlaceholder": "Product Type",
+      "productImageLabel": "Product image",
+      "productImageOptional": "(Optional)",
+      "productImagePlaceholder": "Product Image",
+      "productsNumberLabel": "Products Number",
+      "productsNumberPlaceholder": "Products quantity",
+      "customerNameLabel": "Customer Name",
+      "customerNamePlaceholder": "Customer Name",
+      "customerMobileLabel": "Customer Mobile",
+      "customerMobilePlaceholder": "Customer Mobile",
+      "customerAddressLabel": "Customer Address",
+      "customerAddressPlaceholder": "Customer Address",
+      "nextButton": "Next",
+      "confirmButton": "Confirm",
+      "orderSentMessage": "Your order sent",
+      "supportTeamMessage": "Support team will call you soon",
+      "orderSentOkButton": "Ok",
+      "errorTitle": "Error",
+      "errorMessage": "There is a problem, try again",
+      "errorOkButton": "Ok"
+    }
+  }
+  

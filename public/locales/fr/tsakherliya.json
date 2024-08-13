@@ -1,0 +1,10 @@
+{
+    "title": "Tsakher liya",
+    "name": "Prénom",
+    "lastName": "Nom de famille",
+    "mobileNumber": "Numéro de mobile",
+    "adresse": "Adresse",
+    "order": "Description de la commande",
+    "message": "Message",
+    "confirmButton": "Confirmer la commande"
+}
