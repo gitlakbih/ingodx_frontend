@@ -8,8 +8,10 @@ import TsakherLiya from './Pages/TsakherLiya.tsx';
 import Login_Signup from './Pages/Login.tsx';
 import Profile from './Pages/profile.tsx';
 import './index.css';
+import './i18n.tsx';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+
 
 // Create a Protected Route Component
 const ProtectedRoute: React.FC<{ element: React.ReactElement }> = ({ element }) => {

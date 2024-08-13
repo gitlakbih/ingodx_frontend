@@ -20,12 +20,8 @@ function Profile() {
           Authorization: `Bearer ${accessToken}`
         }
       })
-        .then(response => {
-          console.log('Data:', response.data);
-        })
-        .catch(error => {
-          console.error('Error fetching data:', error);
-        });
+        .then(response => {console.log('Data:', response.data);})
+        .catch(error => {console.error('Error fetching data:', error);});
     } else {
       console.error('Access token not found');
       navigate('/');

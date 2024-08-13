@@ -3,12 +3,17 @@ import "../styles/main.css";
 import logo from '../assets/logo.jpg'
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
+
 
 function Navbar() {
 
+  const { t } = useTranslation('navbar');
+
+
   // handling the scroll event to add a shadon when the page scrolled
   const [scrolled, setScrolled] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -23,29 +28,14 @@ function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+
   }, []);
 
-  //responsive navBar
 
-  // useEffect(() => {
-  //   const menuBtn = document.querySelector(".menu-icon");
-  //   const nav = document.querySelector("#navbar");
-
-  //   const toggleMenu = () => {
-  //     if (nav) nav.classList.toggle("active");
-  //   };
-
-  //   if (menuBtn) menuBtn.addEventListener("click", toggleMenu);
-  //   return () => {
-  //     if (menuBtn) menuBtn.removeEventListener("click", toggleMenu);
-  //   };
-  // }, []);
-  
 
   useEffect(() => {
     const menuBtn = document.querySelector(".menu-icon");
     const nav = document.querySelector(".not-visible");
-
     const toggleMenu = () => {
       if (nav) nav.classList.toggle("visible");
     };
@@ -55,25 +45,26 @@ function Navbar() {
       if (menuBtn) menuBtn.removeEventListener("click", toggleMenu);
     };
   }, []);
+
+
   return (
     <>
-    {/* //the className here is a condition to add a scrolling effect. */}
-    <header className={scrolled ? "scrolled" : ""}>
+      {/* //the className here is a condition to add a scrolling effect. */}
+      <header className={scrolled ? "scrolled" : ""}>
 
-      <Link to="/"><div className="logo">
-        {/* <img src="\assets\imgs\logo.jpg" alt="inGodx logo" /> */}
-        <img src={logo} alt="inGodx logo" />
-        <h3>
-          <span className="godx">in</span>
-          <span className="in">Go</span>
-          <span className="godx">dx</span>
-        </h3>
-      </div></Link>
+        <Link to="/"><div className="logo">
+          <img src={logo} alt="inGodx logo" />
+          <h3>
+            <span className="godx">in</span>
+            <span className="in">Go</span>
+            <span className="godx">dx</span>
+          </h3>
+        </div></Link>
 
-      <nav className="head-navbar">
-        <ul id="navbar">
-          {/* //link is a tool to help to navigate to other  pages like a tag*/}
-          {/* <li>
+        <nav className="head-navbar">
+          <ul id="navbar">
+            {/* //link is a tool to help to navigate to other  pages like a tag*/}
+            {/* <li>
             <Link to="/Profile">
               <div>PFL</div>
             </Link>
@@ -83,41 +74,41 @@ function Navbar() {
               <div>Home</div>
             </Link>
           </li> */}
-          <li>
-            <Link to="/Market">
-              <div>Business</div>
-            </Link>
-          </li>
-          <li>
-            <Link to="/Delivery">
-              <div>Delivery</div>
-            </Link>
-          </li>
-          {/* <li><Link to = '/TsakherLiya'>Tsakher Liya</Link></li> */}
-          {/* <li>
+            <li>
+              <Link to="/Market">
+                <div>{t('business')}</div>
+              </Link>
+            </li>
+            <li>
+              <Link to="/Delivery">
+                <div>{t('delivery')}</div>
+              </Link>
+            </li>
+            {/* <li><Link to = '/TsakherLiya'>Tsakher Liya</Link></li> */}
+            {/* <li>
             <Link to="/About">
               <div>About</div>
             </Link>
           </li> */}
-          <li>
-            <Link to="/Login">
-            
-              <button type="button" className="btn">
-                Sign In
-              </button>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+            <li>
+              <Link to="/Login">
 
-      <div className="menu-icon">
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-      </div>
-    </header>
+                <button type="button" className="btn">
+                  {t("sign_in")}
+                </button>
+              </Link>
+            </li>
+          </ul>
+        </nav>
 
-    <nav className="not-visible" id="side-bar">
+        <div className="menu-icon">
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
+      </header>
+
+      <nav className="not-visible" id="side-bar">
         <ul className="visible-list">
           {/* //link is a tool to help to navigate to other  pages like a tag*/}
           {/* <li>
@@ -132,12 +123,12 @@ function Navbar() {
           </li> */}
           <li>
             <Link to="/Market">
-              <div>Business</div>
+              <div>{t('business')}</div>
             </Link>
           </li>
           <li>
             <Link to="/Delivery">
-              <div>Delivery</div>
+              <div>{t('delivery')}</div>
             </Link>
           </li>
           {/* <li><Link to = '/TsakherLiya'>Tsakher Liya</Link></li> */}
@@ -149,13 +140,13 @@ function Navbar() {
           <li>
             <Link to="/Login">
               <button type="button" className="btn">
-                Sign In
+                {t("sign_in")}
               </button>
             </Link>
           </li>
         </ul>
       </nav>
-    
+
     </>
   );
 }

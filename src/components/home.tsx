@@ -10,21 +10,36 @@ import homeDelivery from "../assets/intill-home.jpg"
 import { BackgroundGradientAnimation } from './ui/background-gradient-animation'
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { useTranslation } from "react-i18next";
+
+// import { useState } from 'react'
 // import checkLogin from './CheckLogin'
-// import { useEffect, useState } from 'react'
-
-
 
 
 function Home() {
+    const { t } = useTranslation('main');
+
+    
+    const Lang = document.documentElement.lang; // Get the language from the HTML tag
+    interface WordsMap {    // Define the type for the wordsMap object
+        [key: string]: string[];
+    }
+    const wordsMap: WordsMap = {    // Define an object with the words for each language
+        ar: ['مجتمعك', 'توصيلاتك', 'طريقك'],
+        en: ['Community', 'Deliveries', 'Way'],
+        fr: ['Communauté', 'Livraisons', 'Chemin'],
+        // Add more language codes and word arrays as needed
+    };
+
+    // Get the words array based on the language
+    const words = wordsMap[Lang] || ['Community', 'Deliveries', 'Way']; // Default to English words
 
     // const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [text] = useTypewriter({
-        words: ['Community', 'Deliveries', 'Way',],
+        words,
         loop: true,  // Change empty object to true to enable looping
-
     });
-
 
 
     // useEffect(() => {
@@ -34,65 +49,77 @@ function Home() {
     //     }
     //     fetchData();
     // }, []);
-
+    const [width, setWidth] = useState(window.innerWidth);
+    useEffect(() => {
+        const handleResize = () => {
+          setWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
 
 
     return (
         <main>
             <BackgroundGradientAnimation>
                 <div
-                // className="absolute z-50 inset-0 flex items-center justify-center pointer-events-none "
-                className="absolute z-50 inset-0 "
+                    // className="absolute z-50 inset-0 flex items-center justify-center pointer-events-none "
+                    className="absolute z-50 inset-0 "
                 >
                     <section className="introduction">
 
                         <h1 >
-                            <span className="bold-8 godx">In</span>
-                            <span className="bold-8 in">Go</span>
-                            <span className="bold-8 godx">dx</span>
-                            <span> Your  </span> 
-                            {/* <br /> */}
+                            <span className="bold-8 godx">{t('home.introduction.title.part1')}</span>
+                            <span className="bold-8 in">{t('home.introduction.title.part2')}</span>
+                            <span className="bold-8 godx">{t('home.introduction.title.part3')}  </span>
+                            {(Lang == "ar") ? null :<span> {t('home.introduction.title.part4')}  </span> }
+                            {width < 1025 && <br />}
                             <span className='text-purple-500'>{text}</span>
                             <Cursor />
                         </h1>
                         <p>
-                            With  <span className="godx">in</span><span className="in">Go</span><span className="godx">dx</span>
+                        {t('home.introduction.subtitle1')}  
+                        <span className="godx"> {t('home.introduction.title.part1')}</span>
+                        <span className="in">{t('home.introduction.title.part2')}</span>
+                        <span className="godx">{t('home.introduction.title.part3')}</span>
                         </p>
                         <p>
-                            Get Whatever You Need, Whenever You Like, From Wherever You Want
+                        {t('home.introduction.subtitle2')} 
                         </p>
                         <div>
-                            
-                        <Link to='/TsakherLiya'><button type="button" className="btn">Set Order</button></Link>
 
-                            
+                            <Link to='/TsakherLiya'><button type="button" className="btn">{t('home.introduction.setOrderButton')} </button></Link>
+
+
                         </div>
                     </section>
                 </div>
             </BackgroundGradientAnimation>
 
-                    <section className="video-container">
-                        <div>
-                            <link
-                                rel="stylesheet"
-                                href="https://cdn.plyr.io/3.6.8/plyr.css"
+            <section className="video-container">
+                <div>
+                    <link
+                        rel="stylesheet"
+                        href="https://cdn.plyr.io/3.6.8/plyr.css"
+                    />
+                    <div className="video">
+                        <video id="player" playsInline autoPlay controls>
+                            <source
+                                src={vedio}
+                                type="video/mp4"
                             />
-                            <div className="video">
-                                <video id="player" playsInline autoPlay controls>
-                                    <source
-                                        src={vedio}
-                                        type="video/mp4"
-                                    />
-                                </video>
-                            </div>
+                        </video>
+                    </div>
 
-                            <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
-                            <script src="plyr.js"></script>
-                            {/* <script>
+                    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+                    <script src="plyr.js"></script>
+                    {/* <script>
                 const player = new Plyr('video', { captions: { active: true } });
               </script> */}
-                        </div>
-                    </section>
+                </div>
+            </section>
 
 
 
@@ -100,18 +127,16 @@ function Home() {
 
             <section className="offers">
                 <div className="sec-title">
-                    <h1>what we offer</h1>
+                    <h1>{t('home.offers.title')}</h1>
                 </div>
 
                 <article className="cardContainer">
                     <div className="cards">
                         <div className="text">
-                            <h2 className="title">Efficient Home Delivery Services: Revolutionizing Convenience and Comfort.</h2>
+                            <h2 className="title">{t('home.offers.homeDelivery.title')}</h2>
                             <p className="paragraph">
-                                Home delivery services have revolutionized shopping, offering unmatched convenience. With a few clicks, customers can receive groceries, meals, and more at their doorstep quickly and reliably. Advanced logistics and real-time tracking ensure flexible and efficient delivery, fitting seamlessly into busy lives. This integration boosts consumer satisfaction and helps businesses expand their reach.
-                            </p>
-                            <Link to='/TsakherLiya'><button type="button" className="btn">set new order</button></Link>
-
+                            {t('home.offers.homeDelivery.description')}</p>
+                            <Link to='/TsakherLiya'><button type="button" className="btn">{t('home.offers.homeDelivery.setNewOrderButton')}</button></Link>
                         </div>
                         <div className="picture">
                             <img src={homeDelivery} width="100%" alt="bisicle" />
@@ -125,11 +150,10 @@ function Home() {
                             <img src={bisicle} width="100%" alt="bisicle" />
                         </div>
                         <div className="text">
-                            <h2 className="title">Delivering Excellence: Working with Ingodx Company.</h2>
+                            <h2 className="title">{t('home.offers.ingodx.title')}</h2>
                             <p className="paragraph">
-                                Working with Ingodx Company offers a dynamic and rewarding experience for delivery professionals. Ingodx is a leader in efficiency and customer satisfaction, providing competitive pay, flexible schedules, and a supportive work environment. Advanced technology and logistics ensure smooth operations, allowing drivers to excel in their roles. Joining Ingodx means being part of a team dedicated to delivering excellence.
-                            </p>
-                            <Link to='/Delivery'><button type="button" className="btn">apply now</button></Link>
+                            {t('home.offers.ingodx.description')}                            </p>
+                            <Link to='/Delivery'><button type="button" className="btn">{t('home.offers.ingodx.applyNowButton')}</button></Link>
 
                         </div>
                     </div>
@@ -138,11 +162,10 @@ function Home() {
                 <article className="cardContainer">
                     <div className="therd cards">
                         <div className="text">
-                            <h2 className="title">Ingodx: Your Reliable Business Delivery Partner</h2>
+                            <h2 className="title">{t('home.offers.businessPartner.title')}</h2>
                             <p className="paragraph">
-                                Ingodx provides businesses with reliable, efficient delivery services. Focused on punctuality and precision, Ingodx ensures timely and secure package arrivals. Advanced logistics and real-time tracking offer transparency and peace of mind. Partnering with Ingodx boosts customer satisfaction and supports business growth.
-                            </p>
-                            <Link to='/Market'> <button type="button" className="btn">place new order</button></Link>
+                            {t('home.offers.businessPartner.description')}                            </p>
+                            <Link to='/Market'> <button type="button" className="btn">{t('home.offers.businessPartner.placeNewOrderButton')}</button></Link>
 
                         </div>
                         <div className="picture">
@@ -155,7 +178,7 @@ function Home() {
 
             <section className="advantages">
                 <h2>
-                    Experience <span>The inGodx Advantage</span>
+                {t('home.advantages.title')}
                 </h2>
                 <div className="advantage-cards">
                     <div className="card">
@@ -168,8 +191,8 @@ function Home() {
                             </div>
                         </div>
                         <div className="right-side">
-                            <h3>Quick & Easy to Use</h3>
-                            <p>Customers can schedule deliveries quickly online, avoiding traditional delays and ensuring a smooth experience.</p>
+                            <h3>{t('home.advantages.cards.quickAndEasy.title')}</h3>
+                            <p>{t('home.advantages.cards.quickAndEasy.description')}</p>
                         </div>
                     </div>
                     <div className="card">
@@ -182,8 +205,8 @@ function Home() {
                             </div>
                         </div>
                         <div className="right-side">
-                            <h3>Secure Platform</h3>
-                            <p>Our SOC-2 Type 2 certified platform, with ongoing penetration testing, ensures your deliveries and information remain secure.</p>
+                            <h3>{t('home.advantages.cards.securePlatform.title')}</h3>
+                            <p>{t('home.advantages.cards.securePlatform.description')}</p>
                         </div>
                     </div>
                     <div className="card">
@@ -196,8 +219,8 @@ function Home() {
                             </div>
                         </div>
                         <div className="right-side">
-                            <h3>Expert Support</h3>
-                            <p>A dedicated support team is available to assist with all delivery needs, providing seamless service and customer satisfaction.</p>
+                            <h3>{t('home.advantages.cards.expertSupport.title')}</h3>
+                            <p>{t('home.advantages.cards.expertSupport.description')}</p>
                         </div>
                     </div>
                     <div className="card">
@@ -210,10 +233,9 @@ function Home() {
                             </div>
                         </div>
                         <div className="right-side">
-                            <h3>Transparency at Every Step</h3>
+                            <h3>{t('home.advantages.cards.transparency.title')}</h3>
                             <p>
-                                Enjoy real-time tracking of deliveries, with complete visibility into package status, ensuring reliability and peace of mind.
-                            </p>
+                            {t('home.advantages.cards.transparency.description')}                            </p>
                         </div>
                     </div>
                 </div>

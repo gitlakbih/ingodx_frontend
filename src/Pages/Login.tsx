@@ -2,26 +2,35 @@ import '../styles/login.css';
 import Navbar from '../components/Navbar';
 import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
-// import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 
 // the component function of login page
 const Login_Signup = () => {
+  const {t}= useTranslation('login')
+
+  // important variables
+  const navigate = useNavigate();
+  const [error, setError] = useState('');
 
   // the user registory informations are updated here
   const [formData, setFormData] = useState({
     username: '',
     email: '',
     password: '',
-    isPassword: '',
+    // isPassword: '',
     user_type: '',
     full_name: ''
   });
-
+  
+  // user Login data stored here
+  const [formDataLogin, setFormDataLogin] = useState({
+    username: '',
+    password: ''
+  });
 
   // the functions for the sign up 
-  // handleChange of the inputs to get data 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {   // handleChange of the inputs to get data 
     const { name, value } = e.target;
     setFormData(prevState => ({
       ...prevState,
@@ -29,19 +38,25 @@ const Login_Signup = () => {
     }));
   };
 
-  // handleSubmit of the Form to submit and send data to dataBase
-  // Notice -- should change fetch to axios
-  // --> axios much better ans easy to use
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {   // handleChange of the select to get data 
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {   // handleSubmit of the Sign up Form 
     e.preventDefault();
     try {
-      const response = await fetch('https://ingodx-backend.onrender.com/api/register', {
+      const response = await fetch('https://srv575615.hstgr.cloud/users/signup', {   // Notice --> should change fetch to axios
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
       });
+
       const data = await response.json();
       if (response.ok) {
         console.log('User registered successfully:', data);
@@ -55,20 +70,7 @@ const Login_Signup = () => {
 
 
   // the functions for the sign up 
-
-  // important variables
-
-  // const { login } = useAuth();
-  const navigate = useNavigate();
-  const [error, setError] = useState('');
-  // user Login stored here
-  const [formDataLogin, setFormDataLogin] = useState({
-    username: '',
-    password: ''
-  });
-
-  // handleChange of the login inputs to get data 
-  const handleChangeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {  // handleChange of the login inputs to get data 
     const { name, value } = e.target;
     setFormDataLogin((prevState) => ({
       ...prevState,
@@ -76,20 +78,12 @@ const Login_Signup = () => {
     }));
   };
 
-  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
 
-  // handleSubmit of the login inputs to send data to dataBase
-  const handleSubmitLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmitLogin = async (e: React.FormEvent<HTMLFormElement>) => {  // handleSubmit of the login inputs to send data to dataBase
     e.preventDefault();
     try {
       // response the api / waiting data to be stored
-      const response = await fetch('https://ingodx-backend.onrender.com/api/login', {
+      const response = await fetch('https://srv575615.hstgr.cloud/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -100,18 +94,14 @@ const Login_Signup = () => {
       if (response.ok) {
         console.log('User logged in successfully', data);
         const access_token = data.access_token;
-        Cookies.set('access_token', access_token, { expires: 7 }); // Expires in 7 days
+        Cookies.set('access_token', access_token, { expires: 1}); // Expires in 1 day
         navigate('/Profile');
-
-        // else {
-        //   setError('Password incorrect');
-        // }
       } else {
-        setError('Password incorrect');
+        setError(t('error_password_incorrect'));
         console.error('Error logging in', data);
       }
     } catch (error) {
-      setError('An error occurred');
+      setError(t('error_occurred'));
       console.error('Error:', error);
     }
   };
@@ -141,28 +131,20 @@ const Login_Signup = () => {
   }, []);
 
 
-
-
-  
- 
-
-  // the elements of the pages 
   return (
     <>
       <Navbar />
       <div className="containerl">
-{/*         <div>getQueryParams()</div> */}
-
         <div className="forms-container">
           <div className="signin-signup">
             <form onSubmit={handleSubmitLogin} className="sign-in-form">
-              <h2 className="title">Sign in</h2>
+              <h2 className="title">{t("login")}</h2>
               <div className="input-field">
                 <i className="fa-solid fa-user"></i>
                 <input
                   type="text"
                   name="username"
-                  placeholder="Username"
+                  placeholder={t("username")}
                   value={formDataLogin.username}
                   onChange={handleChangeLogin}
                   required
@@ -173,24 +155,24 @@ const Login_Signup = () => {
                 <input
                   type="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder={t("password")}
                   value={formDataLogin.password}
                   onChange={handleChangeLogin}
                   required
                 />
               </div>
               {error && <p style={{ color: 'red' }}>{error}</p>}
-              <input type="submit" value="Login" className="btn solid" />
+              <input type="submit" value={t("login" )}className="btn solid" />
             </form>
 
             <form onSubmit={handleSubmit} className="sign-up-form">
-              <h2 className="title">Sign up</h2>
+              <h2 className="title">{t("signup")}</h2>
               <div className="input-field">
                 <i className="fas fa-user"></i>
                 <input
                   type="text"
                   name="username"
-                  placeholder="Username"
+                  placeholder={t("username")}
                   value={formData.username}
                   onChange={handleChange}
                   required
@@ -201,7 +183,7 @@ const Login_Signup = () => {
                 <input
                   type="text"
                   name="full_name"
-                  placeholder="Full Name"
+                  placeholder={t("full_name")}
                   value={formData.full_name}
                   onChange={handleChange}
                   required
@@ -212,7 +194,7 @@ const Login_Signup = () => {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder={t("email")}
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -223,58 +205,65 @@ const Login_Signup = () => {
                 <input
                   type="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder={t("password")}
                   value={formData.password}
                   onChange={handleChange}
                   required
                 />
               </div>
-              <div className="input-field">
+
+              {/* <div className="input-field">
                 <i className="fas fa-lock"></i>
                 <input
                   type="password"
                   name="isPassword"
                   placeholder="Confirm Password"
-                  value={formData.isPassword}
-                  onChange={handleChange}
                   required
                 />
-              </div>
+              </div>  */}
+
               <div className="input-field">
                 <i className=" fas fa-solid fa-check"></i>
-                <select name="type" id="type" onChange={handleSelectChange}>
-                  <option value="">Select an Option</option>
-                  <option value="customer">Customer</option>
-                  <option value="deliver">Deliver</option>
-                  <option value="establishment">Establishment</option>
-                  <option value="other">Other</option>
+                <select name="user_type" 
+                id="type" 
+                value={formData.user_type} 
+                onChange={handleSelectChange}>
+                  <option  value="">{t("select_an_option")}</option>
+                  <option value='customer'>{t("customer")}</option>
+                  <option value='deliver'>{t("deliver")}</option>
+                  <option value='etablissment'>{t("etablissment")}</option>
+                  <option value='other'>{t("other")}</option>
                 </select>
               </div>
-              <input type="submit" className="btn" value="Sign up" />
+              <input type="submit" className="btn" value={t("signup")} />
             </form>
           </div>
         </div>
         <div className="panels-container">
           <div className="panel left-panel">
             <div className="content">
-              <h3>New here ?</h3>
+              <h3>
+              {t("new_here")}
+              </h3>
               <p>
-                Ready to explore more? Sign up and customize your experience with our platform's tools and resources.
+              {t("explore_more")}
               </p>
               <button className="btn transparent" id="sign-up-btn">
-                Sign up
+              {t("signup")}   
               </button>
             </div>
             <img src="img/log.svg" className="image" alt="" />
           </div>
           <div className="panel right-panel">
             <div className="content">
-              <h3>Join us again!</h3>
+              <h3>
+              {t("join_us_again")}   
+              </h3>
               <p>
-                Welcome back! Please enter your username and password to access your account.
+              {t("welcome_back")}   
               </p>
               <button className="btn transparent" id="sign-in-btn">
-                Sign in
+              {t("login")}   
               </button>
             </div>
             <img src="img/register.svg" className="image" alt="" />

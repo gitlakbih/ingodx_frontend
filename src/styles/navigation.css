@@ -24,13 +24,16 @@ header {
 }
 
 .logo img {
-    height: 45px;
-    border-radius: 10px;
+    height: 40px;
+    /* border-radius: 10px; */
+    border-radius: 50%;
+    border-bottom-right-radius: 0px;
 }
 
 .logo h3 {
     font-size: xx-large;
     margin-left: 10px;
+    margin-right: 10px;
     font-weight: 500;
 }
 

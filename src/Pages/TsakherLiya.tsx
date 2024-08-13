@@ -2,8 +2,12 @@ import '../styles/tsakher.css'
 import '../styles/formul.css'
 import React, { useState } from 'react'
 import Navbar from '../components/Navbar';
+import { useTranslation } from "react-i18next";
+
 
 function TsakherLiya() {
+    const { t } = useTranslation('tsakherliya');
+
     // order data
     const [formData, setFormData] = useState({
         name: "",
@@ -60,67 +64,67 @@ function TsakherLiya() {
         <Navbar/>
             <div className="form-cont-ainer glass-card">
 
-                <h2>Tsakher liya</h2>
+                <h2>{t("title")}</h2>
                 <form action="#" 
                 onSubmit={handleSubmit}
                 >
                     <div className='both'>
                         <div className="form-groupe glass-form-groupe">
-                            <label htmlFor="name">Name</label>
+                            <label htmlFor="name">{t("name")}</label>
                             <input
                                 type="text"
                                 id="name"
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
-                                placeholder="Name"
+                                placeholder={t("name")}
                                 required />
                         </div>
                         <div className="form-groupe glass-form-groupe">
-                            <label htmlFor="lastName">Last Name</label>
+                            <label htmlFor="lastName">{t("lastName")}</label>
                             <input
                                 type="text"
                                 id="lastName"
                                 name="lastName"
                                 value={formData.lastName}
                                 onChange={handleChange}
-                                placeholder="Last Name"
+                                placeholder={t("lastName")}
                                 required />
                         </div></div>
                     <div className="form-groupe glass-form-groupe">
-                        <label htmlFor="tell">Mobile Number</label>
+                        <label htmlFor="tell">{t("m obileNumber")}</label>
                         <input
                             type="tel"
                             id="tell"
                             name="tell"
                             value={formData.tell}
                             onChange={handleChange}
-                            placeholder="Mobile Number"
+                            placeholder={t("mobileNumber")}
                             required />
                     </div>
                     <div className="form-groupe glass-form-groupe">
-                        <label htmlFor="adresse">Adresse</label>
+                        <label htmlFor="adresse">{t("adresse")}</label>
                         <input
                             type="text"
                             id="adresse"
                             name="adresse"
                             value={formData.adresse}
                             onChange={handleChange}
-                            placeholder="Adresse"
+                            placeholder={t("adresse")}
                             required />
                     </div>
                     <div className="form-groupe glass-form-groupe">
-                        <label htmlFor="order">Discripe your order here</label>
+                        <label htmlFor="order">{t("order")}</label>
                         <textarea
                             id="order"
                             name="order"
                             value={formData.order}
                             onChange={handleTextChange}
-                            placeholder="Message"
+                            placeholder={t("message")}
                             required></textarea>
                     </div>
                     <div className="form-groupe glass-form-groupe">
-                        <button type="submit" className="btnn">Confirm order</button>
+                        <button type="submit" className="btnn">{t("confirmButton")}</button>
                     </div>
 
                 </form>
