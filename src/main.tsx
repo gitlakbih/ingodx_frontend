@@ -6,7 +6,7 @@ import Delivery from './Pages/delivery.tsx';
 import Market from './Pages/Market.tsx';
 import TsakherLiya from './Pages/TsakherLiya.tsx';
 import Login_Signup from './Pages/Login.tsx';
-import Profile from './Pages/profile.tsx';
+import UserProfile from './Pages/userProfile.tsx'
 import './index.css';
 import './i18n.tsx';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
@@ -42,12 +42,12 @@ const router = createBrowserRouter([
   },
   {
     path: '/Login',
-    element: <Login_Signup />,
+    element: <Login_Signup/>,
   },
   {
-    path: '/Profile',
+    path: '/userProfile',
     // element: <ProtectedRoute element={<Profile />} />,
-    element:<Profile />
+    element:<UserProfile/>,
   },
 ]);
 

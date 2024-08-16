@@ -1,0 +1,12 @@
+.order-cards-container{
+    height: auto;
+    width: calc(100vw - 287px);
+    max-width: calc(100vw - 287px);
+    position: absolute;
+    left: 270px;
+    top: 55px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(506px,1fr)) ;   
+    overflow-x: hidden;
+
+}

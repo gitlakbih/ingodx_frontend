@@ -1,0 +1,32 @@
+
+.lang{
+    height: 300px;
+    width: 100px;
+}
+
+.lang button{
+    height: 35px;
+    width: 80px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 0px 15px gray ;
+}
+
+#list{
+    height: 300px;
+    display: flex;
+}
+
+
+.langlist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    color: black;
+    background-color: aliceblue;
+    width:fit-content ;
+    border-radius: 5px;
+}

@@ -60,10 +60,9 @@ const Login_Signup = () => {
       const data = await response.json();
       if (response.ok) {
         console.log('User registered successfully:', data);
-        navigate('/Profile');
+        navigate('/userProfile');
       } else {
         console.error('Error registering user:', data);
-        setError('Username or email all ready registred')
       }
     } catch (error) {
       console.error('Error:', error);
@@ -97,7 +96,7 @@ const Login_Signup = () => {
         console.log('User logged in successfully', data);
         const access_token = data.access_token;
         Cookies.set('access_token', access_token, { expires: 1}); // Expires in 1 day
-        navigate('/Profile');
+        navigate('/userProfile');
       } else {
         setError(t('error_password_incorrect'));
         console.error('Error logging in', data);
@@ -237,6 +236,7 @@ const Login_Signup = () => {
                   <option value='other'>{t("other")}</option>
                 </select>
               </div>
+
               <input type="submit" className="btn" value={t("signup")} />
             </form>
           </div>

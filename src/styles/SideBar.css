@@ -1,0 +1,147 @@
+.bar {
+    height: calc(100vh - 20px);
+    width: 250px;
+    border: solid 1px rgb(229, 229, 229);
+    border-radius: 7px;
+    padding: 8px;
+    margin: 10px;
+    background-color: white;
+    position: fixed;
+    box-shadow: 0 1px 5px lightgray;
+}
+
+
+/* logo part */
+.bar-logo {
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    filter: blur(.4px);
+    cursor: pointer;
+    -webkit-text-stroke: #000 1px;
+    transition: all 1s;
+
+    .in {
+        color: #64A7B0;
+    }
+
+    .godx {
+        color: #F8C01E;
+    }
+}
+.bar-logo:hover{
+    animation: shake 1s   infinite;
+}
+
+@keyframes shake {
+        0%{
+            transform: rotate(0deg);   }
+        20%{
+            transform: rotate(-5deg);    }
+        40%{
+            transform: rotate(5deg);    }
+        60%{
+            transform: rotate(-5deg);    }
+        80%{
+            transform: rotate(5deg);    }
+        100%{
+            transform: rotate(0deg);    }
+}
+
+.bar-hr{
+    border: none;
+    border-bottom:3px solid #cecece;
+    border-radius: 50%;
+    margin: 0 15px;
+}
+
+
+
+
+
+
+
+/* links part */
+.bar-links{
+    margin-top: 20px;
+
+    .bar-link{
+        text-align: start;
+        text-transform: capitalize;
+        display: flex;
+        width:220px;
+        height: 40px;
+        margin: 0 7px 5px ;
+        padding-top: 7px;
+        padding-left: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #5d5d5d;
+        transition: all .5s;
+    }
+}
+
+.bar-link:hover{
+    background-color: #ededed;
+}
+.bar-link:active{
+    transform: scale(0.95);
+    transition: all .2s;
+}
+
+
+/* icons link styling */
+.bar-link svg{
+    width: 18px;
+    height: 15px;
+    margin-right: 8px;
+    margin-top: 2px;
+    translate: 0 2px;
+    transition: all .5s;
+}
+
+
+
+/* logout button part */
+.bar-btn{
+    height: 40px;
+    width: 220px;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background-color: #64A7B0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 2px;
+    /* padding-left: 15px; */
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    transition: all .5s;
+    cursor: pointer;
+
+}
+.bar-btn:hover{
+    background-color: #4a9099;
+}
+
+.bar-btn:active{
+    transform: scale(0.95);
+    transition: all .2s;
+}
+
+.bar-btn svg{
+    width: 20px;
+    height: 20px;
+    margin-left: 12px;
+    margin-bottom: 3px;
+    translate: 0 3px;
+    transition: all .5s;
+}

@@ -1,0 +1,20 @@
+
+
+.glass-form-groupe{
+    margin-left:40px;
+    margin-right:40px;
+}
+
+.glass-card{
+    padding: 40px 0px;
+    max-width: 700px;
+    background-color: rgba(255, 255, 255, 0.589);
+    backdrop-filter: blur(10px);
+    border: 1px solid #cccccc4e;
+    border-radius: 7px;
+    margin-top: 100px;
+}
+
+.form-groupe textarea{
+    height: 150px;
+}

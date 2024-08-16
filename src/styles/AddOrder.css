@@ -1,0 +1,41 @@
+/* logout button part */
+.add-order-btn{
+    height: 40px;
+    width: 220px;
+    position: fixed;
+    bottom: 25px;
+    right: 30px;
+    background-color: #F8C01E;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 2px;
+    text-transform: capitalize;
+    text-align: center;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    transition: all .5s;
+    cursor: pointer;
+    z-index: 9999;
+
+}
+.add-order-btn:hover{
+    background-color: #c99805;
+}
+
+.add-order-btn:active{
+    transform: scale(0.95);
+    transition: all .2s;
+}
+
+.add-order-btn svg{
+    width: 20px;
+    height: 20px;
+    margin-left: 12px;
+    margin-bottom: 3px;
+    translate: 0 3px;
+    transition: all .5s;
+}

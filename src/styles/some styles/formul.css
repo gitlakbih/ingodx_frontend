@@ -1,0 +1,175 @@
+label {
+    font-weight: 600;
+}
+
+.form-cont-ainer {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 80px auto 150px auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    width: 700px;
+}
+
+.form-cont-ainer h2 {
+    color: #000000;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    text-transform: capitalize;
+
+}
+
+.form-groupe {
+    padding: auto;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.form-groupe label {
+    display: block;
+    color: #333;
+}
+
+.form-groupe .radio {
+    display: inline;
+    width: 30px;
+}
+
+.form-groupe input,
+.form-groupe select,
+.form-groupe textarea,
+.form-groupe .btnn {
+    width: 100%;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline-style: none;
+}
+
+.form-groupe select {
+    color: #aaa;
+}
+
+.form-groupe option {
+    margin: 10px auto;
+}
+
+
+.form-groupe input:focus,
+.form-groupe select:focus,
+.form-groupe textarea:focus {
+    border: 2px solid #248a9c;
+}
+
+.btnn {
+    display: inline-block;
+    background-color: #f8c01e;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.btnn:hover {
+    background-color: #e0aa1b;
+}
+
+/* delvery subscribe part  */
+.done {
+    background-color: aliceblue;
+    height: 300px;
+    width: 400px;
+    border-radius: 10px;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    box-shadow: 0 0 5px rgb(204, 204, 204);
+    z-index: 7;
+    animation: droped 1s;
+    backdrop-filter:brightness(29);
+}
+
+.end-card-text {
+    font-size: small;
+    color: #828282be;
+}
+
+svg.minimize{
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+@keyframes droped {
+    from {
+        top: -600px;
+    }
+
+    to {
+        top: 50%;
+    }
+}
+
+.end-card-container {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: #0882971b;
+    backdrop-filter: blur(5px);
+    height: 100%;
+    transition: all 0.5s;
+}
+
+@media (max-width:700px) {
+    .form-cont-ainer {
+        padding: 2rem;
+        width: 100%;
+        margin: 80px auto 50px auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .form-cont-ainer form {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .form-groupe {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    /* delvery part  */
+    .done {
+        background-color: aliceblue;
+        height: auto;
+        width: 300px;
+        border-radius: 10px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 600;
+    }
+}
