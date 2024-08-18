@@ -1,18 +1,21 @@
-
-
-.glass-form-groupe{
-    margin-left:40px;
-    margin-right:40px;
+.overlay{
+    height: 100%;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.363);
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
 .glass-card{
-    padding: 40px 0px;
-    max-width: 700px;
+    width: fit-content;
     background-color: rgba(255, 255, 255, 0.938);
     backdrop-filter: blur(10px);
     border: 1px solid #bdbdbd4e;
     border-radius: 7px;
-    margin-top: 100px;
 }
 
 .both{
@@ -27,23 +30,26 @@
     }
     
 }
-
-.form-cont-ainer{
-    margin: 70px auto 0;
-}
-
 .form-groupe textarea{
     height: 150px;
 }
 
-@media (max-width:700px) {
-    .both{padding: 0;}
+ @media (max-width:700px) {
+    .both{
+        padding: 0;
+        margin-bottom: 15px;
+
+    }
     .both .form-groupe{
         margin: 0;
     }
+    .glass-form-groupe{
+        margin: 0;
+        margin-bottom: 15px;
+    }
 }
 
-@media (max-width:300px) {
+@media (max-width:425px) {
     .both{
         display: block;
     }
@@ -52,6 +58,5 @@
     }
     .both .form-groupe:first-child{
         margin-bottom: 15px;
-    }
-    
-}
+    }    
+} 

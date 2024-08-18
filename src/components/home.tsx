@@ -42,13 +42,6 @@ function Home() {
     });
 
 
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         const loggedIn = await checkLogin();
-    //         setIsLoggedIn(loggedIn);
-    //     }
-    //     fetchData();
-    // }, []);
     const [width, setWidth] = useState(window.innerWidth);
     useEffect(() => {
         const handleResize = () => {
