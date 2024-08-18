@@ -67,16 +67,16 @@ function Navbar() {
               <div>Home</div>
             </Link>
           </li> */}
-            {/* <li>
+            <li>
               <Link to="/Market">
                 <div>{t('business')}</div>
               </Link>
-            </li> */}
-            {/* <li>
+            </li>
+            <li>
               <Link to="/Delivery">
                 <div>{t('delivery')}</div>
               </Link>
-            </li> */}
+            </li>
             {/* <li><Link to = '/TsakherLiya'>Tsakher Liya</Link></li> */}
             {/* <li>
             <Link to="/About">
