@@ -1,9 +1,13 @@
 import "../styles/orderCard.css"
 
 
-function OrderCard(props) {
-    let username = props.username;
-    let order = props.order;
+interface OrderCardProps {
+  username: string;
+  order: string; // Adjust the type according to your actual order data structure
+}
+
+function OrderCard(props: OrderCardProps) {
+  const { username, order } = props;
 
   return (
     <div className="order-card">

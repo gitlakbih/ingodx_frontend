@@ -13,17 +13,25 @@ function TsakherLiya() {
     });
 
     // handleChange of the inputs to get data 
-    const handleChange = (e ) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement> ) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
             ...prevState,
             [name]: value
         }));
     };
+        // handleChange of the inputs to get data 
+        const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement> ) => {
+            const { name, value } = e.target;
+            setFormData(prevState => ({
+                ...prevState,
+                [name]: value
+            }));
+        };
 
-    const handleSubmit = async (e) => {    // submit function to send data to server
+        const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {   // submit function to send data to server
         //test
-        console.log(formData)
+        // console.log(formData)
 
         e.preventDefault();
         try {
@@ -41,8 +49,7 @@ function TsakherLiya() {
         } catch (error) {
             console.error('Error:', error);
         }
-        // must add a sign to tell that the order done
-        // and faild
+        // must add a sign to tell that the order done or failed
     };
 
     return (
@@ -104,7 +111,7 @@ function TsakherLiya() {
                             id="order"
                             name="order"
                             value={formData.order}
-                            onChange={handleChange}
+                            onChange={handleTextChange}
                             placeholder="Message"
                             required></textarea>
                     </div>
