@@ -94,36 +94,3 @@ footer{
     font-weight: 500;
   }
   
-  .button-container {
-    display: flex;
-    overflow: hidden;
-    border-radius: 25px;
-    border: 1px solid #ccc;
-}
-
-.button {
-    flex: 1;
-    padding: 10px;
-    width: 150px;
-    height: 45px;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s;
-}
-
-.button:first-child {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    background-color: #1A8EA7;
-}
-
-.button:last-child {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    background-color: #f0f0f0;
-}
-
-.button:hover {
-    background-color: #ddd;
-}
