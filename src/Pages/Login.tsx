@@ -1,77 +1,84 @@
-import '../styles/login.css';
-import Navbar from '../components/Navbar';
-import { useEffect, useState } from 'react';
-import Cookies from 'js-cookie';
-import { useNavigate } from 'react-router-dom';
+import "../styles/login.css";
+import Navbar from "../components/Navbar";
+import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 // the component function of login page
 const Login_Signup = () => {
-  const {t}= useTranslation('login')
+  const { t } = useTranslation("login");
 
   // important variables
   const navigate = useNavigate();
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   // the user registory informations are updated here
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
+    username: "",
+    email: "",
+    password: "",
     // isPassword: '',
-    user_type: '',
-    full_name: ''
+    user_type: "",
+    full_name: "",
   });
-  
+
   // user Login data stored here
   const [formDataLogin, setFormDataLogin] = useState({
-    username: '',
-    password: ''
+    username: "",
+    password: "",
   });
 
-  // the functions for the sign up 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {   // handleChange of the inputs to get data 
+  // the functions for the sign up
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // handleChange of the inputs to get data
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {   // handleChange of the select to get data 
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    // handleChange of the select to get data
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {   // handleSubmit of the Sign up Form 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    // handleSubmit of the Sign up Form
     e.preventDefault();
     try {
-      const response = await fetch('https://srv575615.hstgr.cloud/users/signup', {   // Notice --> should change fetch to axios
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
+      const response = await fetch(
+        "https://srv575615.hstgr.cloud/users/signup",
+        {
+          // Notice --> should change fetch to axios
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await response.json();
       if (response.ok) {
-        console.log('User registered successfully:', data);
-        navigate('/userProfile');
+        console.log("User registered successfully:", data);
+        navigate("/userProfile");
       } else {
-        console.error('Error registering user:', data);
+        console.error("Error registering user:", data);
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
-
-  // the functions for the sign up 
-  const handleChangeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {  // handleChange of the login inputs to get data 
+  // the functions for the sign up
+  const handleChangeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // handleChange of the login inputs to get data
     const { name, value } = e.target;
     setFormDataLogin((prevState) => ({
       ...prevState,
@@ -79,34 +86,36 @@ const Login_Signup = () => {
     }));
   };
 
-
-  const handleSubmitLogin = async (e: React.FormEvent<HTMLFormElement>) => {  // handleSubmit of the login inputs to send data to dataBase
+  const handleSubmitLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    // handleSubmit of the login inputs to send data to dataBase
     e.preventDefault();
     try {
       // response the api / waiting data to be stored
-      const response = await fetch('https://srv575615.hstgr.cloud/users/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formDataLogin)
-      });
+      const response = await fetch(
+        "https://srv575615.hstgr.cloud/users/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formDataLogin),
+        }
+      );
       const data = await response.json();
       if (response.ok) {
-        console.log('User logged in successfully', data);
+        console.log("User logged in successfully", data);
         const access_token = data.access_token;
-        Cookies.set('access_token', access_token, { expires: 1}); // Expires in 1 day
-        navigate('/userProfile');
+        Cookies.set("access_token", access_token, { expires: 1 }); // Expires in 1 day
+        navigate("/userProfile");
       } else {
-        setError(t('error_password_incorrect'));
-        console.error('Error logging in', data);
+        setError(t("error_password_incorrect"));
+        console.error("Error logging in", data);
       }
     } catch (error) {
-      setError(t('error_occurred'));
-      console.error('Error:', error);
+      setError(t("error_occurred"));
+      console.error("Error:", error);
     }
   };
-
 
   // the script of changing mode sign up to login
   useEffect(() => {
@@ -126,11 +135,12 @@ const Login_Signup = () => {
     if (sign_in_btn) sign_in_btn.addEventListener("click", handleSignInClick);
 
     return () => {
-      if (sign_up_btn) sign_up_btn.removeEventListener("click", handleSignUpClick);
-      if (sign_in_btn) sign_in_btn.removeEventListener("click", handleSignInClick);
+      if (sign_up_btn)
+        sign_up_btn.removeEventListener("click", handleSignUpClick);
+      if (sign_in_btn)
+        sign_in_btn.removeEventListener("click", handleSignInClick);
     };
   }, []);
-
 
   return (
     <>
@@ -162,8 +172,8 @@ const Login_Signup = () => {
                   required
                 />
               </div>
-              {error && <p style={{ color: 'red' }}>{error}</p>}
-              <input type="submit" value={t("login" )}className="btn solid" />
+              {error && <p style={{ color: "red" }}>{error}</p>}
+              <input type="submit" value={t("login")} className="btn solid" />
             </form>
 
             <form onSubmit={handleSubmit} className="sign-up-form">
@@ -225,15 +235,17 @@ const Login_Signup = () => {
 
               <div className="input-field">
                 <i className=" fas fa-solid fa-check"></i>
-                <select name="user_type" 
-                id="type" 
-                value={formData.user_type} 
-                onChange={handleSelectChange}>
-                  <option  value="">{t("select_an_option")}</option>
-                  <option value='customer'>{t("customer")}</option>
-                  <option value='deliver'>{t("deliver")}</option>
-                  <option value='etablissment'>{t("etablissment")}</option>
-                  <option value='other'>{t("other")}</option>
+                <select
+                  name="user_type"
+                  id="type"
+                  value={formData.user_type}
+                  onChange={handleSelectChange}
+                >
+                  <option value="">{t("select_an_option")}</option>
+                  <option value="customer">{t("customer")}</option>
+                  <option value="deliver">{t("deliver")}</option>
+                  <option value="etablissment">{t("etablissment")}</option>
+                  <option value="other">{t("other")}</option>
                 </select>
               </div>
 
@@ -244,35 +256,26 @@ const Login_Signup = () => {
         <div className="panels-container">
           <div className="panel left-panel">
             <div className="content">
-              <h3>
-              {t("new_here")}
-              </h3>
-              <p>
-              {t("explore_more")}
-              </p>
+              <h3>{t("new_here")}</h3>
+              <p>{t("explore_more")}</p>
               <button className="btn transparent" id="sign-up-btn">
-              {t("signup")}   
+                {t("signup")}
               </button>
             </div>
             <img src="img/log.svg" className="image" alt="" />
           </div>
           <div className="panel right-panel">
             <div className="content">
-              <h3>
-              {t("join_us_again")}   
-              </h3>
-              <p>
-              {t("welcome_back")}   
-              </p>
+              <h3>{t("join_us_again")}</h3>
+              <p>{t("welcome_back")}</p>
               <button className="btn transparent" id="sign-in-btn">
-              {t("login")}   
+                {t("login")}
               </button>
             </div>
             <img src="img/register.svg" className="image" alt="" />
           </div>
         </div>
       </div>
-
     </>
   );
 };
